@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/sobre.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="planeje.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO DA PÁGINA ===== -->
+    <section class="sobre-hero">
+        <div class="sobre-hero-overlay"></div>
+        <div class="container">
+            <div class="sobre-hero-content">
+                <span class="sobre-hero-badge">SOBRE NÓS</span>
+                <h1>Quem Somos</h1>
+                <p>Conheça a história, a missão e os valores do Descubra Angola.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <section class="sobre-content">
+        <div class="container">
+            
+            <!-- ===== SOBRE ===== -->
+            <div class="sobre-intro">
+                <div class="sobre-intro-text">
+                    <h2>O Ritmo da Vida Angolana</h2>
+                    <p>O <strong>Descubra Angola</strong> nasceu com o propósito de mostrar ao mundo a beleza, a cultura e a hospitalidade do povo angolano. Somos uma plataforma de turismo dedicada a promover os melhores destinos, experiências e safaris em Angola.</p>
+                    <p>Com uma equipa apaixonada por viagens e por Angola, trabalhamos diariamente para oferecer informações atualizadas, roteiros personalizados e recomendações autênticas para quem deseja explorar este país fascinante.</p>
+                    <div class="sobre-missao">
+                        <div class="missao-item">
+                            <i class="fas fa-bullseye"></i>
+                            <div>
+                                <h4>Missão</h4>
+                                <p>Promover o turismo em Angola, revelando as suas belezas e culturas únicas.</p>
+                            </div>
+                        </div>
+                        <div class="missao-item">
+                            <i class="fas fa-eye"></i>
+                            <div>
+                                <h4>Visão</h4>
+                                <p>Ser a principal referência de turismo em Angola, reconhecida pela qualidade e autenticidade.</p>
+                            </div>
+                        </div>
+                        <div class="missao-item">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <h4>Valores</h4>
+                                <p>Autenticidade, hospitalidade, sustentabilidade e paixão por Angola.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sobre-intro-image">
+                    <img src="../media/hero.jpg" alt="Descubra Angola">
+                    <div class="sobre-intro-image-overlay">
+                        <span>Descubra Angola</span>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== NÚMEROS ===== -->
+            <div class="sobre-numbers">
+                <div class="sobre-number-item">
+                    <span class="number">18</span>
+                    <span class="label">Províncias</span>
+                </div>
+                <div class="sobre-number-item">
+                    <span class="number">30+</span>
+                    <span class="label">Destinos</span>
+                </div>
+                <div class="sobre-number-item">
+                    <span class="number">100%</span>
+                    <span class="label">Aventura</span>
+                </div>
+                <div class="sobre-number-item">
+                    <span class="number">100K+</span>
+                    <span class="label">Viajantes</span>
+                </div>
+            </div>
+
+            <!-- ===== POR QUE ESCOLHER ===== -->
+            <div class="sobre-porque">
+                <h2>Por que escolher o Descubra Angola?</h2>
+                <div class="sobre-porque-grid">
+                    <div class="porque-item">
+                        <div class="porque-icon">
+                            <i class="fas fa-map-signs"></i>
+                        </div>
+                        <h4>Roteiros Personalizados</h4>
+                        <p>Criamos roteiros à medida dos seus interesses e necessidades.</p>
+                    </div>
+                    <div class="porque-item">
+                        <div class="porque-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Segurança e Confiança</h4>
+                        <p>Trabalhamos com parceiros locais de confiança e garantimos a sua segurança.</p>
+                    </div>
+                    <div class="porque-item">
+                        <div class="porque-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Guias Locais</h4>
+                        <p>Os nossos guias são angolanos e conhecem cada recanto do país.</p>
+                    </div>
+                    <div class="porque-item">
+                        <div class="porque-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Paixão por Angola</h4>
+                        <p>Somos apaixonados por Angola e queremos partilhar essa paixão consigo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== EQUIPA ===== -->
+            <div class="sobre-equipa">
+                <h2>Conheça a Nossa Equipa</h2>
+                <div class="sobre-equipa-grid">
+                    <div class="equipa-item">
+                        <div class="equipa-avatar">
+                            <span>👩‍💼</span>
+                        </div>
+                        <h4>Ana Silva</h4>
+                        <p>Fundadora & CEO</p>
+                    </div>
+                    <div class="equipa-item">
+                        <div class="equipa-avatar">
+                            <span>🧑‍💻</span>
+                        </div>
+                        <h4>João Santos</h4>
+                        <p>Diretor de Conteúdo</p>
+                    </div>
+                    <div class="equipa-item">
+                        <div class="equipa-avatar">
+                            <span>👨‍✈️</span>
+                        </div>
+                        <h4>Pedro Ferreira</h4>
+                        <p>Guia Especialista</p>
+                    </div>
+                    <div class="equipa-item">
+                        <div class="equipa-avatar">
+                            <span>👩‍🎨</span>
+                        </div>
+                        <h4>Maria Costa</h4>
+                        <p>Designer & Fotógrafa</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.desc">
+                        Curadoria de experiências únicas nos destinos mais impressionantes de Angola. 
+                        Sua próxima aventura merece esse cuidado.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="sobre.html" data-i18n="nav.sobre">Sobre</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== NOTIFICAÇÕES ===== -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

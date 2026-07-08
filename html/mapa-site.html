@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa do Site | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mapa-site.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <div id="progressBar"></div>
+
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                    <li class="dropdown">
+                        <a href="destinos.html" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="regioes.html" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="cultura.html" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    <a href="planeje.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="mapa-hero">
+        <div class="mapa-hero-overlay"></div>
+        <div class="container">
+            <div class="mapa-hero-content">
+                <span class="mapa-hero-badge">MAPA DO SITE</span>
+                <h1>Mapa do Site</h1>
+                <p>Navegue por todas as páginas do Descubra Angola.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mapa-content">
+        <div class="container">
+            <div class="mapa-grid">
+                <div class="mapa-col">
+                    <h3>Páginas Principais</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="regioes.html">Passeios</a></li>
+                        <li><a href="cultura.html">Safaris</a></li>
+                        <li><a href="recomendamos.html">Recomendamos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="planeje.html">Planeje Agora</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="mapa-col">
+                    <h3>Suporte</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+
+                <div class="mapa-col">
+                    <h3>Conta</h3>
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="recuperar-senha.html">Recuperar Senha</a></li>
+                    </ul>
+                </div>
+
+                <div class="mapa-col">
+                    <h3>Destinos</h3>
+                    <ul>
+                        <li><a href="serra-leba.html">Serra da Leba</a></li>
+                        <li><a href="miradouro-da-lua.html">Miradouro da Lua</a></li>
+                        <li><a href="quedas-do-kalandula.html">Quedas do Kalandula</a></li>
+                        <li><a href="fenda-da-tundavala.html">Fenda da Tundavala</a></li>
+                        <li><a href="ilha-do-mussulo.html">Ilha do Mussulo</a></li>
+                        <li><a href="parque-da-kissama.html">Parque da Kissama</a></li>
+                        <li><a href="floresta-do-maiombe.html">Floresta do Maiombe</a></li>
+                        <li><a href="palanca-negra.html">Palanca Negra</a></li>
+                        <li><a href="deserto-do-namibe.html">Deserto do Namibe</a></li>
+                        <li><a href="mbanza-kongo.html">Mbanza Kongo</a></li>
+                        <li><a href="museu-nacional-de-antropologia.html">Museu Nacional de Antropologia</a></li>
+                        <li><a href="museu-da-moeda.html">Museu da Moeda</a></li>
+                        <li><a href="museu-das-forcas-armadas.html">Museu das Forças Armadas</a></li>
+                        <li><a href="parque-nacional-da-cameia.html">Parque Nacional da Cameia</a></li>
+                        <li><a href="parque-nacional-do-iona.html">Parque Nacional do Iona</a></li>
+                        <li><a href="rio-lucala.html">Rio Lucala</a></li>
+                        <li><a href="foz-do-rio-zaire.html">Foz do Rio Zaire</a></li>
+                        <li><a href="arco-do-namibe.html">Arco do Namibe</a></li>
+                        <li><a href="parque-nacional-da-mavinga.html">Parque Nacional da Mavinga</a></li>
+                        <li><a href="quedas-do-cuemba.html">Quedas do Cuemba</a></li>
+                        <li><a href="cascata-do-kawambundo.html">Cascata do Kawambundo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo"><h3><span>Descubra</span> Angola</h3><p>THE RHYTHM OF LIFE</p></div>
+                    <p class="footer-description" data-i18n="footer.desc">Curadoria de experiências únicas nos destinos mais impressionantes de Angola. Sua próxima aventura merece esse cuidado.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="sobre.html" data-i18n="nav.sobre">Sobre</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p></div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+    <script src="../js/main.js"></script>
+</body>
+</html>

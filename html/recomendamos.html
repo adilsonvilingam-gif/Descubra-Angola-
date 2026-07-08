@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendamos | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/recomendamos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html" class="active" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="planeje.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO DA PÁGINA ===== -->
+    <section class="recomendamos-hero">
+        <div class="recomendamos-hero-overlay"></div>
+        <div class="container">
+            <div class="recomendamos-hero-content">
+                <span class="recomendamos-hero-badge">RECOMENDAMOS</span>
+                <h1>As Melhores Recomendações</h1>
+                <p>Descubra os melhores hotéis, restaurantes, guias e dicas para a sua viagem em Angola.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIAS ===== -->
+    <section class="recomendamos-categorias">
+        <div class="container">
+            <div class="recomendamos-categorias-wrapper">
+                <button class="recomendamos-cat active" data-cat="todos">Todos</button>
+                <button class="recomendamos-cat" data-cat="hoteis">Hotéis</button>
+                <button class="recomendamos-cat" data-cat="restaurantes">Restaurantes</button>
+                <button class="recomendamos-cat" data-cat="guias">Guias</button>
+                <button class="recomendamos-cat" data-cat="transporte">Transporte</button>
+                <button class="recomendamos-cat" data-cat="dicas">Dicas</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LISTA DE RECOMENDAÇÕES ===== -->
+    <section class="recomendamos-lista">
+        <div class="container">
+            <div class="recomendamos-grid" id="recomendamosGrid">
+                <!-- Recomendação 1 - Hotel -->
+                <div class="recomendacao-card" data-cat="hoteis">
+                    <div class="recomendacao-image">
+                        <img src="../media/hotel-luanda.jpg" alt="Hotel Epic Sana">
+                        <span class="recomendacao-tag">Hotel</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Epic Sana Luanda</h3>
+                        <p>Hotel de luxo no coração de Luanda, com vista para o mar, piscina infinita e serviços premium.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Luanda</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.9</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€€€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 2 - Restaurante -->
+                <div class="recomendacao-card" data-cat="restaurantes">
+                    <div class="recomendacao-image">
+                        <img src="../media/restaurante-luanda.jpg" alt="Restaurante Lookal">
+                        <span class="recomendacao-tag">Restaurante</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Restaurante Lookal</h3>
+                        <p>Culinária angolana e internacional com vista para o mar, no coração de Luanda.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Luanda</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.7</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 3 - Guia -->
+                <div class="recomendacao-card" data-cat="guias">
+                    <div class="recomendacao-image">
+                        <img src="../media/guia-turistico.jpg" alt="Guia Turístico">
+                        <span class="recomendacao-tag">Guia</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>João da Silva - Guia Local</h3>
+                        <p>Guia especializado em safaris e passeios culturais, com mais de 10 anos de experiência.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Luanda</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.9</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">Sob consulta</span>
+                            <a href="#" class="recomendacao-btn">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 4 - Transporte -->
+                <div class="recomendacao-card" data-cat="transporte">
+                    <div class="recomendacao-image">
+                        <img src="../media/aluguer-carro.jpg" alt="Aluguer de Carro">
+                        <span class="recomendacao-tag">Transporte</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Angola Rent a Car</h3>
+                        <p>Aluguer de veículos 4x4 para safaris e passeios em todo o território angolano.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Luanda</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.6</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 5 - Dicas -->
+                <div class="recomendacao-card" data-cat="dicas">
+                    <div class="recomendacao-image">
+                        <img src="../media/dicas-viagem.jpg" alt="Dicas de Viagem">
+                        <span class="recomendacao-tag">Dicas</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Seguro de Viagem Angola</h3>
+                        <p>Contrate o melhor seguro de viagem para a sua aventura em Angola com cobertura total.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Angola</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.8</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 6 - Hotel -->
+                <div class="recomendacao-card" data-cat="hoteis">
+                    <div class="recomendacao-image">
+                        <img src="../media/hotel-lubango.jpg" alt="Hotel Tundavala">
+                        <span class="recomendacao-tag">Hotel</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Hotel Tundavala</h3>
+                        <p>Hotel com vista deslumbrante sobre a Serra da Leba, perfeito para relaxar.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Lubango</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.7</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 7 - Restaurante -->
+                <div class="recomendacao-card" data-cat="restaurantes">
+                    <div class="recomendacao-image">
+                        <img src="../media/restaurante-benguela.jpg" alt="Restaurante O Pescador">
+                        <span class="recomendacao-tag">Restaurante</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Restaurante O Pescador</h3>
+                        <p>Especialidade em frutos do mar frescos, localizado na Baía Farta, Benguela.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Benguela</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.5</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 8 - Guia -->
+                <div class="recomendacao-card" data-cat="guias">
+                    <div class="recomendacao-image">
+                        <img src="../media/guia-natureza.jpg" alt="Guia Natureza">
+                        <span class="recomendacao-tag">Guia</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Maria Pereira - Guia de Natureza</h3>
+                        <p>Especialista em fauna e flora angolana, guia em parques nacionais e reservas.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Huíla</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.8</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">Sob consulta</span>
+                            <a href="#" class="recomendacao-btn">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 9 - Transporte -->
+                <div class="recomendacao-card" data-cat="transporte">
+                    <div class="recomendacao-image">
+                        <img src="../media/transfer.jpg" alt="Transfer">
+                        <span class="recomendacao-tag">Transporte</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Angola Transfers</h3>
+                        <p>Serviço de transfer aeroporto e city tours em Luanda e outras províncias.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Luanda</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.7</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 10 - Hotel -->
+                <div class="recomendacao-card" data-cat="hoteis">
+                    <div class="recomendacao-image">
+                        <img src="../media/hotel-namibe.jpg" alt="Hotel Namibe">
+                        <span class="recomendacao-tag">Hotel</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Hotel Namibe</h3>
+                        <p>Hotel à beira-mar com vista para o Oceano Atlântico e acesso direto à praia.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Namibe</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.4</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 11 - Restaurante -->
+                <div class="recomendacao-card" data-cat="restaurantes">
+                    <div class="recomendacao-image">
+                        <img src="../media/restaurante-huila.jpg" alt="Restaurante Serra da Leba">
+                        <span class="recomendacao-tag">Restaurante</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Restaurante Serra da Leba</h3>
+                        <p>Gastronomia típica da Huíla com vista panorâmica para a Serra da Leba.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Huíla</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.6</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 12 - Restaurante -->
+                <div class="recomendacao-card" data-cat="restaurantes">
+                    <div class="recomendacao-image">
+                        <img src="../media/restaurante-cabinda.jpg" alt="Restaurante Cabinda">
+                        <span class="recomendacao-tag">Restaurante</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Restaurante Baia de Cabinda</h3>
+                        <p>Gastronomia local e internacional com vista para a Baía de Cabinda.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Cabinda</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.3</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 13 - Hotel -->
+                <div class="recomendacao-card" data-cat="hoteis">
+                    <div class="recomendacao-image">
+                        <img src="../media/hotel-presidential.jpg" alt="Hotel Presidential">
+                        <span class="recomendacao-tag">Hotel</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Hotel Presidential</h3>
+                        <p>Hotel de luxo em Luanda, com vista para o mar e localização privilegiada.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Luanda</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.6</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€€€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 14 - Restaurante -->
+                <div class="recomendacao-card" data-cat="restaurantes">
+                    <div class="recomendacao-image">
+                        <img src="../media/restaurante-palm-beach.jpg" alt="Restaurante Palm Beach">
+                        <span class="recomendacao-tag">Restaurante</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Palm Beach Restaurant</h3>
+                        <p>Cozinha internacional e frutos do mar com vista para a praia da Ilha do Mussulo.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Ilha do Mussulo</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.7</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">€€€</span>
+                            <a href="#" class="recomendacao-btn">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recomendação 15 - Dicas -->
+                <div class="recomendacao-card" data-cat="dicas">
+                    <div class="recomendacao-image">
+                        <img src="../media/vacinas.jpg" alt="Vacinas">
+                        <span class="recomendacao-tag">Dicas</span>
+                    </div>
+                    <div class="recomendacao-content">
+                        <h3>Saúde e Vacinas para Angola</h3>
+                        <p>Informações sobre vacinas recomendadas e cuidados de saúde para viajar em Angola.</p>
+                        <div class="recomendacao-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Angola</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.6</span>
+                        </div>
+                        <div class="recomendacao-footer">
+                            <span class="recomendacao-preco">Grátis</span>
+                            <a href="#" class="recomendacao-btn">Ler mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carregar mais -->
+            <div class="recomendamos-load-more">
+                <button class="btn-load-more-recomendamos" id="loadMoreRecomendamos">
+                    <i class="fas fa-sync-alt"></i> Carregar mais recomendações
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="recomendamos-newsletter">
+        <div class="container">
+            <div class="recomendamos-newsletter-wrapper">
+                <div class="recomendamos-newsletter-content">
+                    <h2>Receba novidades</h2>
+                    <p>Inscreva-se para receber novas recomendações e ofertas exclusivas.</p>
+                </div>
+                <form class="recomendamos-newsletter-form">
+                    <input type="email" placeholder="Seu email" required>
+                    <button type="submit">Inscrever</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.desc">
+                        Curadoria de experiências únicas nos destinos mais impressionantes de Angola. 
+                        Sua próxima aventura merece esse cuidado.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="sobre.html" data-i18n="nav.sobre">Sobre</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== NOTIFICAÇÕES ===== -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+    <script src="../js/recomendamos.js"></script>
+
+</body>
+</html>

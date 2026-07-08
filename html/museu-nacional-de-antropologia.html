@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu Nacional de Antropologia | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/destino-detalhe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+
+    <style>
+        .mapa-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .mapa-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            display: block;
+        }
+
+        .destino-mapa {
+            margin: 30px 0;
+        }
+
+        .destino-mapa h2 {
+            margin-bottom: 10px;
+        }
+
+        .destino-mapa .mapa-subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        body.dark-mode .destino-mapa .mapa-subtitle {
+            color: #aaa;
+        }
+
+        body.dark-mode .mapa-container {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .mapa-container iframe {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mapa-container iframe {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progressBar"></div>
+
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                    <li class="dropdown">
+                        <a href="destinos.html" class="active" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="regioes.html" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="cultura.html" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    <a href="planeje.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="destino-hero">
+        <div class="destino-hero-bg" style="background-image: url('../media/museuantropologia.jpg');"></div>
+        <div class="destino-hero-overlay"></div>
+        <div class="destino-hero-content">
+            <div class="container">
+                <div class="destino-hero-text">
+                    <span class="destino-hero-badge">Museu</span>
+                    <h1>Museu Nacional de Antropologia</h1>
+                    <p class="destino-hero-local"><i class="fas fa-map-marker-alt"></i> Luanda, Angola</p>
+                    <div class="destino-hero-stats">
+                        <div class="hero-stat"><span class="hero-stat-number">4.2</span><span class="hero-stat-label">⭐ Avaliação</span></div>
+                        <div class="hero-stat"><span class="hero-stat-number">38</span><span class="hero-stat-label">Avaliações</span></div>
+                        <div class="hero-stat"><span class="hero-stat-number">🏛️</span><span class="hero-stat-label">Museu</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destino-content">
+        <div class="container">
+            <div class="destino-content-grid">
+                <div class="destino-main">
+                    <div class="destino-section">
+                        <h2>Sobre o Museu Nacional de Antropologia</h2>
+                        <p>O <strong>Museu Nacional de Antropologia</strong> é um dos mais importantes museus de Angola, localizado em Luanda. Preserva a história e cultura dos povos de Angola, com um acervo impressionante que inclui artefactos, instrumentos musicais, máscaras e objetos do quotidiano das diversas etnias angolanas.</p>
+                        <p>O museu está instalado num edifício histórico e é uma parada obrigatória para quem quer conhecer a rica diversidade cultural de Angola.</p>
+                    </div>
+
+                    <!-- ===== MAPA INTERATIVO ===== -->
+                    <div class="destino-mapa destino-section">
+                        <h2>Localização</h2>
+                        <p class="mapa-subtitle">Encontre o Museu Nacional de Antropologia no mapa e planeie a sua visita.</p>
+                        <div class="mapa-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126141.96868093944!2d13.20460795!3d-8.8399876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f15a7a2a4b6f%3A0x4b5e6f7a8a9b0c1d!2sMuseu%20Nacional%20de%20Antropologia%2C%20Luanda%2C%20Angola!5e0!3m2!1spt-PT!2spt!4v1700000000000" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="destino-section">
+                        <h2>O que ver no Museu</h2>
+                        <div class="destino-atividades">
+                            <div class="atividade-item"><i class="fas fa-mask"></i><div><h4>Máscaras</h4><p>Acervo de máscaras tradicionais das diversas etnias angolanas.</p></div></div>
+                            <div class="atividade-item"><i class="fas fa-drum"></i><div><h4>Instrumentos</h4><p>Instrumentos musicais tradicionais como o ngoma e o hungu.</p></div></div>
+                            <div class="atividade-item"><i class="fas fa-history"></i><div><h4>História</h4><p>Exposições sobre a história dos povos de Angola.</p></div></div>
+                            <div class="atividade-item"><i class="fas fa-camera"></i><div><h4>Fotografia</h4><p>Registe os artefactos e a arquitetura do museu.</p></div></div>
+                        </div>
+                    </div>
+                    <div class="destino-section">
+                        <h2>Como chegar</h2>
+                        <p>O Museu Nacional de Antropologia está localizado no centro de Luanda, na Rua Major Kanhangulo.</p>
+                        <ul class="destino-info-lista">
+                            <li><i class="fas fa-map-marker-alt"></i> Rua Major Kanhangulo, Luanda</li>
+                            <li><i class="fas fa-clock"></i> Horário: 9h00 - 17h00</li>
+                            <li><i class="fas fa-ticket-alt"></i> Entrada: Gratuita (mediante apresentação de documento)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="destino-sidebar">
+                    <div class="destino-card-info">
+                        <h3>Informações</h3>
+                        <ul>
+                            <li><span>📍 Localização:</span> Luanda, Angola</li>
+                            <li><span>⭐ Avaliação:</span> 4.2 (38 avaliações)</li>
+                            <li><span>🏷️ Categoria:</span> Museu</li>
+                            <li><span>🌍 Região:</span> Centro de Angola</li>
+                        </ul>
+                    </div>
+                    <div class="destino-card-info">
+                        <h3>Melhor época para visitar</h3>
+                        <p>O museu pode ser visitado durante todo o ano, mas a melhor altura é durante a estação seca, de <strong>Maio a Setembro</strong>, para aproveitar também os arredores.</p>
+                    </div>
+                    <div class="destino-card-info">
+                        <h3>Compartilhe</h3>
+                        <div class="destino-share">
+                            <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="share-btn instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="destino-card-info">
+                        <h3>Voltar</h3>
+                        <a href="destinos.html" class="btn-voltar-destino"><i class="fas fa-arrow-left"></i> Ver todos os destinos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destino-galeria">
+        <div class="container">
+            <h2>Galeria de Fotos</h2>
+            <div class="galeria-grid">
+                <div class="galeria-item"><img src="../media/museuantropologia.jpg" alt="Museu Nacional de Antropologia 1"></div>
+                <div class="galeria-item"><img src="../media/museuantropologia.jpg" alt="Museu Nacional de Antropologia 2"></div>
+                <div class="galeria-item"><img src="../media/museuantropologia.jpg" alt="Museu Nacional de Antropologia 3"></div>
+                <div class="galeria-item"><img src="../media/museuantropologia.jpg" alt="Museu Nacional de Antropologia 4"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo"><h3><span>Descubra</span> Angola</h3><p>THE RHYTHM OF LIFE</p></div>
+                    <p class="footer-description" data-i18n="footer.desc">Curadoria de experiências únicas nos destinos mais impressionantes de Angola. Sua próxima aventura merece esse cuidado.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="sobre.html" data-i18n="nav.sobre">Sobre</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p></div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+    <script src="../js/main.js"></script>
+</body>
+</html>

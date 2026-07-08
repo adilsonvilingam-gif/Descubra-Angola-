@@ -1,0 +1,539 @@
+/* =============================================
+   DESTINO-DETALHE.CSS - Página de Detalhe do Destino
+   ============================================= */
+
+/* ===== HERO DO DESTINO ===== */
+.destino-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 140px 0 60px;
+}
+
+.destino-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.destino-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.50) 100%);
+    z-index: 1;
+}
+
+.destino-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.destino-hero-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.destino-hero-badge {
+    display: inline-block;
+    background: rgba(255,183,3,0.15);
+    color: #FFB703;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.destino-hero-text h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -1.5px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+.destino-hero-local {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.destino-hero-local i {
+    color: #FFB703;
+}
+
+.destino-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.destino-hero-stats .hero-stat {
+    text-align: center;
+}
+
+.destino-hero-stats .hero-stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #FFB703;
+    line-height: 1;
+}
+
+.destino-hero-stats .hero-stat-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+}
+
+/* =============================================
+   CONTEÚDO
+   ============================================= */
+
+.destino-content {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.destino-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+
+/* ===== COLUNA PRINCIPAL ===== */
+.destino-main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.destino-section h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 16px;
+}
+
+.destino-section p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+.destino-section p strong {
+    color: #0F172A;
+}
+
+/* ===== ATIVIDADES ===== */
+.destino-atividades {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.atividade-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 18px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+
+.atividade-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.atividade-item i {
+    font-size: 1.3rem;
+    color: #FFB703;
+    margin-top: 2px;
+}
+
+.atividade-item h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 2px;
+}
+
+.atividade-item p {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ===== INFO LISTA ===== */
+.destino-info-lista {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+}
+
+.destino-info-lista li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    color: #555;
+    font-size: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.destino-info-lista li:last-child {
+    border-bottom: none;
+}
+
+.destino-info-lista li i {
+    color: #FFB703;
+    width: 20px;
+    text-align: center;
+}
+
+/* =============================================
+   COLUNA LATERAL
+   ============================================= */
+
+.destino-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.destino-card-info {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+.destino-card-info h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.destino-card-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.destino-card-info ul li {
+    padding: 6px 0;
+    color: #555;
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.destino-card-info ul li span {
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.destino-card-info p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* =============================================
+   SHARE
+   ============================================= */
+
+.destino-share {
+    display: flex;
+    gap: 10px;
+}
+
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+}
+
+.share-btn.facebook {
+    background: #1877F2;
+}
+
+.share-btn.twitter {
+    background: #000;
+}
+
+.share-btn.whatsapp {
+    background: #25D366;
+}
+
+.share-btn.instagram {
+    background: linear-gradient(135deg, #E4405F, #F58529);
+}
+
+/* =============================================
+   BOTÃO VOLTAR
+   ============================================= */
+
+.btn-voltar-destino {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #E85D04;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-voltar-destino:hover {
+    color: #c44a00;
+    gap: 14px;
+}
+
+/* =============================================
+   GALERIA
+   ============================================= */
+
+.destino-galeria {
+    padding: 60px 0 80px;
+    background: white;
+}
+
+.destino-galeria h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0F172A;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.galeria-item {
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.05);
+}
+
+/* =============================================
+   RESPONSIVO
+   ============================================= */
+
+@media (max-width: 992px) {
+    .destino-content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .destino-hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .destino-hero {
+        min-height: 40vh;
+        padding: 120px 0 40px;
+    }
+    
+    .destino-hero-text h1 {
+        font-size: 2.4rem;
+    }
+    
+    .destino-hero-stats {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+    
+    .destino-hero-stats .hero-stat-number {
+        font-size: 2rem;
+    }
+    
+    .destino-content {
+        padding: 40px 0;
+    }
+    
+    .destino-section h2 {
+        font-size: 1.4rem;
+    }
+    
+    .destino-atividades {
+        grid-template-columns: 1fr;
+    }
+    
+    .galeria-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .galeria-item img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .destino-hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .destino-hero-badge {
+        font-size: 0.6rem;
+        padding: 4px 12px;
+    }
+    
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .galeria-item img {
+        height: 200px;
+    }
+    
+    .destino-card-info {
+        padding: 18px;
+    }
+}
+
+/* =============================================
+   DARK MODE
+   ============================================= */
+
+body.dark-mode .destino-hero-overlay {
+    background: linear-gradient(135deg, rgba(10,15,26,0.80) 0%, rgba(15,23,42,0.60) 100%);
+}
+
+body.dark-mode .destino-content {
+    background: #0F172A;
+}
+
+body.dark-mode .destino-section h2 {
+    color: white;
+}
+
+body.dark-mode .destino-section p {
+    color: #aaa;
+}
+
+body.dark-mode .destino-section p strong {
+    color: white;
+}
+
+body.dark-mode .destino-info-lista li {
+    color: #aaa;
+    border-color: #2a3a5a;
+}
+
+body.dark-mode .destino-info-lista li i {
+    color: #FFB703;
+}
+
+body.dark-mode .destino-card-info {
+    background: #1a2744;
+}
+
+body.dark-mode .destino-card-info h3 {
+    color: white;
+    border-color: #2a3a5a;
+}
+
+body.dark-mode .destino-card-info ul li {
+    color: #aaa;
+}
+
+body.dark-mode .destino-card-info ul li span {
+    color: white;
+}
+
+body.dark-mode .destino-card-info p {
+    color: #aaa;
+}
+
+body.dark-mode .atividade-item {
+    background: #1a2744;
+}
+
+body.dark-mode .atividade-item h4 {
+    color: white;
+}
+
+body.dark-mode .atividade-item p {
+    color: #aaa;
+}
+
+body.dark-mode .destino-galeria {
+    background: #0F172A;
+}
+
+body.dark-mode .destino-galeria h2 {
+    color: white;
+}
+
+body.dark-mode .btn-voltar-destino {
+    color: #FFB703;
+}
+
+body.dark-mode .btn-voltar-destino:hover {
+    color: #E85D04;
+}

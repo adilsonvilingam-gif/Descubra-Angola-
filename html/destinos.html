@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/destinos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html" class="active">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="planeje.html" class="btn-nav">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO DA PÁGINA DE DESTINOS ===== -->
+    <section class="destinos-hero">
+        <div class="destinos-hero-bg" style="background-image: url('../media/hero.jpg');"></div>
+        <div class="destinos-hero-overlay"></div>
+        
+        <div class="destinos-hero-content">
+            <div class="container">
+                <div class="destinos-hero-text">
+                    <h1>Explore <span>18 províncias</span> de Angola</h1>
+                    <p class="destinos-hero-sub">Destinos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FILTROS ===== -->
+    <section id="filtros" class="destinos-filtros">
+        <div class="container">
+            <div class="filtros-wrapper">
+                <div class="filtros-busca">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Pesquisar província ou destino...">
+                    </div>
+                </div>
+                
+                <div class="filtros-categorias">
+                    <button class="filtro-btn active" data-filter="todos">Todas</button>
+                    <button class="filtro-btn" data-filter="norte">Norte</button>
+                    <button class="filtro-btn" data-filter="centro">Centro</button>
+                    <button class="filtro-btn" data-filter="sul">Sul</button>
+                    <button class="filtro-btn" data-filter="leste">Leste</button>
+                    <button class="filtro-btn" data-filter="destaque">Destaques</button>
+                </div>
+                
+                <div class="filtros-resultados">
+                    <span id="resultadosCount"><strong>18</strong> províncias</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROVÍNCIAS ===== -->
+    <section id="destinos" class="destinos-grade">
+        <div class="container">
+            <div class="provincias-grid" id="provinciasGrid">
+                <!-- As províncias serão carregadas via JavaScript -->
+            </div>
+            
+            <!-- Loading -->
+            <div class="destinos-loading" id="destinosLoading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Carregando províncias...</p>
+            </div>
+            
+            <!-- No Results -->
+            <div class="destinos-no-results" id="destinosNoResults" style="display:none;">
+                <i class="fas fa-search"></i>
+                <h3>Nenhuma província encontrada</h3>
+                <p>Tente ajustar os filtros ou a pesquisa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description">
+                        Curadoria de experiências únicas nos destinos mais impressionantes de Angola. 
+                        Sua próxima aventura merece esse cuidado.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="regioes.html">Passeios</a></li>
+                        <li><a href="cultura.html">Safaris</a></li>
+                        <li><a href="recomendamos.html">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos.html">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== NOTIFICAÇÕES ===== -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+    <script src="../js/destinos.js"></script>
+
+</body>
+</html>

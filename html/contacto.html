@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="planeje.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO DA PÁGINA ===== -->
+    <section class="contacto-hero">
+        <div class="contacto-hero-overlay"></div>
+        <div class="container">
+            <div class="contacto-hero-content">
+                <span class="contacto-hero-badge">CONTACTO</span>
+                <h1>Fale Connosco</h1>
+                <p>Estamos aqui para ajudar a planear a sua próxima aventura em Angola.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <section class="contacto-content">
+        <div class="container">
+            <div class="contacto-grid">
+                
+                <!-- ===== COLUNA ESQUERDA - FORMULÁRIO ===== -->
+                <div class="contacto-form-wrapper">
+                    <h2>Envie-nos uma mensagem</h2>
+                    <p>Preencha o formulário abaixo e entraremos em contacto consigo o mais breve possível.</p>
+                    
+                    <form id="contactForm" class="contacto-form">
+                        <div class="form-group">
+                            <label for="contactNome">Nome completo</label>
+                            <input type="text" id="contactNome" placeholder="Seu nome" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" placeholder="seu@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactTelefone">Telefone</label>
+                            <input type="tel" id="contactTelefone" placeholder="+244 923 456 789">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactAssunto">Assunto</label>
+                            <select id="contactAssunto">
+                                <option value="">Selecione um assunto</option>
+                                <option value="informacoes">Informações sobre destinos</option>
+                                <option value="safari">Safaris e Experiências</option>
+                                <option value="reserva">Reservas</option>
+                                <option value="parceria">Parcerias</option>
+                                <option value="sugestao">Sugestão</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMensagem">Mensagem</label>
+                            <textarea id="contactMensagem" rows="5" placeholder="Escreva a sua mensagem..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-enviar">
+                            <i class="fas fa-paper-plane"></i> Enviar mensagem
+                        </button>
+                        
+                        <div id="contactMessage" class="form-message"></div>
+                    </form>
+                </div>
+
+                <!-- ===== COLUNA DIREITA - INFORMAÇÕES ===== -->
+                <div class="contacto-info-wrapper">
+                    <div class="contacto-info-card">
+                        <h3>Informações de Contacto</h3>
+                        
+                        <div class="contacto-info-item">
+                            <div class="contacto-info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Morada</h4>
+                                <p>Luanda, Angola</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contacto-info-item">
+                            <div class="contacto-info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Telefone</h4>
+                                <p><a href="tel:+244923456789">+244 923 456 789</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contacto-info-item">
+                            <div class="contacto-info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@descubraangola.com">info@descubraangola.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contacto-info-item">
+                            <div class="contacto-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Horário de Atendimento</h4>
+                                <p>Segunda a Sexta: 8h - 18h<br>Sábado: 9h - 14h</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contacto-social-card">
+                        <h3>Siga-nos</h3>
+                        <div class="contacto-social-links">
+                            <a href="#" aria-label="Instagram" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" aria-label="Facebook" class="social-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="YouTube" class="social-link youtube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" aria-label="TikTok" class="social-link tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" class="social-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="WhatsApp" class="social-link whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contacto-faq-card">
+                        <h3>Perguntas Frequentes</h3>
+                        <p>Dúvidas sobre os nossos serviços? Consulte o nosso <a href="faq.html">FAQ</a>.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAPA ===== -->
+    <section class="contacto-mapa">
+        <div class="container">
+            <h2>Onde Estamos</h2>
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126141.96868093944!2d13.20460795!3d-8.8399876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f15a7a2a4b6f%3A0x4b5e6f7a8a9b0c1d!2sLuanda%2C%20Angola!5e0!3m2!1spt-PT!2spt!4v1700000000000" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.desc">
+                        Curadoria de experiências únicas nos destinos mais impressionantes de Angola. 
+                        Sua próxima aventura merece esse cuidado.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="sobre.html" data-i18n="nav.sobre">Sobre</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== NOTIFICAÇÕES ===== -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+    <script src="../js/contacto.js"></script>
+
+</body>
+</html>

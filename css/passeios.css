@@ -1,0 +1,575 @@
+/* =============================================
+   PASSEIOS.CSS - Página de Passeios
+   ============================================= */
+
+/* ===== HERO ===== */
+.passeios-hero {
+    position: relative;
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, #0F172A 0%, #1a2744 50%, #2a3a5a 100%);
+    text-align: center;
+    overflow: hidden;
+}
+
+.passeios-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,183,3,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.passeios-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.4) 100%);
+}
+
+.passeios-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.passeios-hero-badge {
+    display: inline-block;
+    background: rgba(255,183,3,0.15);
+    color: #FFB703;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.passeios-hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+
+.passeios-hero-content p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* =============================================
+   CATEGORIAS
+   ============================================= */
+
+.passeios-categorias {
+    padding: 24px 0;
+    background: white;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 80px;
+    z-index: 50;
+}
+
+.passeios-categorias-wrapper {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.passeio-cat {
+    padding: 8px 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 50px;
+    background: transparent;
+    color: #666;
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.passeio-cat:hover {
+    border-color: #FFB703;
+    color: #0F172A;
+}
+
+.passeio-cat.active {
+    background: linear-gradient(135deg, #FFB703, #E85D04);
+    border-color: #FFB703;
+    color: #0F172A;
+    box-shadow: 0 4px 20px rgba(255,183,3,0.3);
+}
+
+/* =============================================
+   LISTA DE PASSEIOS
+   ============================================= */
+
+.passeios-lista {
+    padding: 50px 0 60px;
+    background: #f8f9fa;
+}
+
+.passeios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.passeio-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    transition: all 0.4s ease;
+    animation: fadeInUp 0.5s ease;
+}
+
+.passeio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.passeio-card.hidden {
+    display: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.passeio-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.passeio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.passeio-card:hover .passeio-image img {
+    transform: scale(1.05);
+}
+
+.passeio-duracao {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.passeio-content {
+    padding: 20px 24px 24px;
+}
+
+.passeio-categoria {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #E85D04;
+    background: rgba(232,93,4,0.1);
+    padding: 2px 12px;
+    border-radius: 50px;
+    margin-bottom: 8px;
+}
+
+.passeio-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 8px;
+}
+
+.passeio-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.passeio-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.passeio-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.passeio-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.passeio-preco {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+.passeio-btn {
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #FFB703, #E85D04);
+    color: #0F172A;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.passeio-btn:hover {
+    background: linear-gradient(135deg, #E85D04, #c44a00);
+    color: white;
+    transform: translateX(4px);
+}
+
+/* =============================================
+   CARREGAR MAIS
+   ============================================= */
+
+.passeios-load-more {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-load-more-passeios {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 32px;
+    background: transparent;
+    border: 2px solid #0F172A;
+    border-radius: 50px;
+    color: #0F172A;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-load-more-passeios:hover {
+    background: #0F172A;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(15,23,42,0.15);
+}
+
+.btn-load-more-passeios i {
+    transition: transform 0.6s ease;
+}
+
+.btn-load-more-passeios:hover i {
+    transform: rotate(180deg);
+}
+
+/* =============================================
+   NEWSLETTER
+   ============================================= */
+
+.passeios-newsletter {
+    padding: 60px 0;
+    background: white;
+}
+
+.passeios-newsletter-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.passeios-newsletter-content h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 4px;
+}
+
+.passeios-newsletter-content p {
+    color: #666;
+}
+
+.passeios-newsletter-form {
+    display: flex;
+    gap: 10px;
+}
+
+.passeios-newsletter-form input {
+    padding: 12px 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+    min-width: 260px;
+}
+
+.passeios-newsletter-form input:focus {
+    border-color: #FFB703;
+    box-shadow: 0 0 0 4px rgba(255,183,3,0.08);
+}
+
+.passeios-newsletter-form button {
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #FFB703, #E85D04);
+    color: #0F172A;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.passeios-newsletter-form button:hover {
+    background: linear-gradient(135deg, #E85D04, #c44a00);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(232,93,4,0.3);
+}
+
+/* =============================================
+   DARK MODE
+   ============================================= */
+
+body.dark-mode .passeios-hero {
+    background: linear-gradient(135deg, #0a0f1a 0%, #0F172A 50%, #1a2744 100%);
+}
+
+body.dark-mode .passeios-categorias {
+    background: #1a2744;
+    border-color: rgba(255,255,255,0.04);
+}
+
+body.dark-mode .passeio-cat {
+    border-color: #2a3a5a;
+    color: #888;
+}
+
+body.dark-mode .passeio-cat:hover {
+    border-color: #FFB703;
+    color: #FFB703;
+}
+
+body.dark-mode .passeio-cat.active {
+    background: linear-gradient(135deg, #FFB703, #E85D04);
+    color: #0F172A;
+}
+
+body.dark-mode .passeios-lista {
+    background: #0F172A;
+}
+
+body.dark-mode .passeio-card {
+    background: #1a2744;
+}
+
+body.dark-mode .passeio-content h3 {
+    color: white;
+}
+
+body.dark-mode .passeio-content p {
+    color: #aaa;
+}
+
+body.dark-mode .passeio-meta {
+    color: #666;
+}
+
+body.dark-mode .passeio-preco {
+    color: #FFB703;
+}
+
+body.dark-mode .passeio-btn {
+    background: linear-gradient(135deg, #FFB703, #E85D04);
+    color: #0F172A;
+}
+
+body.dark-mode .passeio-btn:hover {
+    background: linear-gradient(135deg, #E85D04, #c44a00);
+    color: white;
+}
+
+body.dark-mode .btn-load-more-passeios {
+    border-color: #FFB703;
+    color: #FFB703;
+}
+
+body.dark-mode .btn-load-more-passeios:hover {
+    background: #FFB703;
+    color: #0F172A;
+}
+
+body.dark-mode .passeios-newsletter {
+    background: #0F172A;
+}
+
+body.dark-mode .passeios-newsletter-content h2 {
+    color: white;
+}
+
+body.dark-mode .passeios-newsletter-content p {
+    color: #aaa;
+}
+
+body.dark-mode .passeios-newsletter-form input {
+    background: #1a2744;
+    color: white;
+    border-color: #2a3a5a;
+}
+
+body.dark-mode .passeios-newsletter-form input:focus {
+    border-color: #FFB703;
+}
+
+body.dark-mode .passeios-newsletter-form input::placeholder {
+    color: #555;
+}
+
+body.dark-mode .passeios-newsletter-form button {
+    background: linear-gradient(135deg, #FFB703, #E85D04);
+    color: #0F172A;
+}
+
+body.dark-mode .passeios-newsletter-form button:hover {
+    background: linear-gradient(135deg, #E85D04, #c44a00);
+    color: white;
+}
+
+/* =============================================
+   RESPONSIVO
+   ============================================= */
+
+@media (max-width: 992px) {
+    .passeios-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .passeios-hero {
+        padding: 130px 0 50px;
+    }
+
+    .passeios-hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .passeios-hero-content p {
+        font-size: 1rem;
+    }
+
+    .passeios-categorias {
+        top: 70px;
+        padding: 16px 0;
+    }
+
+    .passeio-cat {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    .passeios-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .passeio-image {
+        height: 180px;
+    }
+
+    .passeios-newsletter-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .passeios-newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .passeios-newsletter-form input {
+        min-width: 100%;
+    }
+
+    .passeios-newsletter-form button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .passeios-hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .passeios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .passeio-image {
+        height: 200px;
+    }
+
+    .passeios-categorias-wrapper {
+        gap: 6px;
+    }
+
+    .passeio-cat {
+        padding: 4px 12px;
+        font-size: 0.75rem;
+    }
+
+    .btn-load-more-passeios {
+        width: 100%;
+        justify-content: center;
+    }
+}

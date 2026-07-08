@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safaris | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/safaris.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html" class="active" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="planeje.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO DA PÁGINA ===== -->
+    <section class="safaris-hero">
+        <div class="safaris-hero-bg" style="background-image: url('../media/kissama.png');"></div>
+        <div class="safaris-hero-overlay"></div>
+        <div class="container">
+            <div class="safaris-hero-content">
+                <span class="safaris-hero-badge">SAFARIS</span>
+                <h1>Vida Selvagem em Angola</h1>
+                <p>Explore a fauna e flora angolana nos melhores parques e reservas do país.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DESTAQUES ===== -->
+    <section class="safaris-destaques">
+        <div class="container">
+            <div class="safaris-destaques-grid">
+                <div class="destaque-item">
+                    <div class="destaque-number">500+</div>
+                    <div class="destaque-text">Espécies de aves</div>
+                </div>
+                <div class="destaque-item">
+                    <div class="destaque-number">4</div>
+                    <div class="destaque-text">Parques Nacionais</div>
+                </div>
+                <div class="destaque-item">
+                    <div class="destaque-number">100%</div>
+                    <div class="destaque-text">Experiência autêntica</div>
+                </div>
+                <div class="destaque-item">
+                    <div class="destaque-number">100K+</div>
+                    <div class="destaque-text">Visitantes/ano</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LISTA DE SAFARIS ===== -->
+    <section class="safaris-lista">
+        <div class="container">
+            <div class="safaris-header">
+                <h2>Nossos Safaris</h2>
+                <p>Escolha a melhor experiência para si e descubra a vida selvagem angolana.</p>
+            </div>
+
+            <div class="safaris-grid" id="safarisGrid">
+                <!-- Safari 1 -->
+                <div class="safari-card" data-cat="classico">
+                    <div class="safari-image">
+                        <img src="../media/kissama.png" alt="Safari na Kissama">
+                        <span class="safari-duracao">3 dias</span>
+                        <span class="safari-tag">Popular</span>
+                    </div>
+                    <div class="safari-content">
+                        <h3>Safari no Parque da Kissama</h3>
+                        <p>Explore a vida selvagem no coração de Angola com elefantes, palancas e diversas espécies.</p>
+                        <div class="safari-meta">
+                            <span><i class="fas fa-users"></i> 4-10 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 3 dias</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.7</span>
+                        </div>
+                        <div class="safari-footer">
+                            <span class="safari-preco">€350</span>
+                            <a href="#" class="safari-btn">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari 2 -->
+                <div class="safari-card" data-cat="luxo">
+                    <div class="safari-image">
+                        <img src="../media/iona.jpg" alt="Parque Nacional do Iona">
+                        <span class="safari-duracao">5 dias</span>
+                        <span class="safari-tag">Luxo</span>
+                    </div>
+                    <div class="safari-content">
+                        <h3>Safari no Parque Nacional do Iona</h3>
+                        <p>O maior parque nacional de Angola, com uma fauna e flora deslumbrantes.</p>
+                        <div class="safari-meta">
+                            <span><i class="fas fa-users"></i> 4-8 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 5 dias</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.6</span>
+                        </div>
+                        <div class="safari-footer">
+                            <span class="safari-preco">€650</span>
+                            <a href="#" class="safari-btn">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari 3 -->
+                <div class="safari-card" data-cat="fotografico">
+                    <div class="safari-image">
+                        <img src="../media/palanca-negra.png" alt="Palanca Negra">
+                        <span class="safari-duracao">4 dias</span>
+                        <span class="safari-tag">Fotográfico</span>
+                    </div>
+                    <div class="safari-content">
+                        <h3>Safari Fotográfico</h3>
+                        <p>Capture a fauna e flora angolana com um guia especializado em fotografia.</p>
+                        <div class="safari-meta">
+                            <span><i class="fas fa-users"></i> 2-6 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 4 dias</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.9</span>
+                        </div>
+                        <div class="safari-footer">
+                            <span class="safari-preco">€550</span>
+                            <a href="#" class="safari-btn">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari 4 -->
+                <div class="safari-card" data-cat="observacao">
+                    <div class="safari-image">
+                        <img src="../media/cameia.jpg" alt="Parque Nacional da Cameia">
+                        <span class="safari-duracao">3 dias</span>
+                        <span class="safari-tag">Observação</span>
+                    </div>
+                    <div class="safari-content">
+                        <h3>Safari de Observação de Aves</h3>
+                        <p>Descubra a diversidade de aves do Parque Nacional da Cameia com um especialista.</p>
+                        <div class="safari-meta">
+                            <span><i class="fas fa-users"></i> 4-8 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 3 dias</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.4</span>
+                        </div>
+                        <div class="safari-footer">
+                            <span class="safari-preco">€280</span>
+                            <a href="#" class="safari-btn">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari 5 -->
+                <div class="safari-card" data-cat="familia">
+                    <div class="safari-image">
+                        <img src="../media/kissama.png" alt="Safari em Família">
+                        <span class="safari-duracao">2 dias</span>
+                        <span class="safari-tag">Família</span>
+                    </div>
+                    <div class="safari-content">
+                        <h3>Safari em Família</h3>
+                        <p>Uma experiência inesquecível para toda a família no Parque da Kissama.</p>
+                        <div class="safari-meta">
+                            <span><i class="fas fa-users"></i> 2-12 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 2 dias</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.8</span>
+                        </div>
+                        <div class="safari-footer">
+                            <span class="safari-preco">€250</span>
+                            <a href="#" class="safari-btn">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari 6 -->
+                <div class="safari-card" data-cat="classico">
+                    <div class="safari-image">
+                        <img src="../media/mavinga.jpg" alt="Mavinga">
+                        <span class="safari-duracao">4 dias</span>
+                        <span class="safari-tag">Natureza</span>
+                    </div>
+                    <div class="safari-content">
+                        <h3>Safari em Mavinga</h3>
+                        <p>Região de savanas e rios, perfeita para safaris e aventura em Angola.</p>
+                        <div class="safari-meta">
+                            <span><i class="fas fa-users"></i> 4-10 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 4 dias</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.3</span>
+                        </div>
+                        <div class="safari-footer">
+                            <span class="safari-preco">€420</span>
+                            <a href="#" class="safari-btn">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carregar mais -->
+            <div class="safaris-load-more">
+                <button class="btn-load-more-safaris" id="loadMoreSafaris">
+                    <i class="fas fa-sync-alt"></i> Carregar mais safaris
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POR QUE ESCOLHER ===== -->
+    <section class="safaris-porque">
+        <div class="container">
+            <h2>Por que escolher os nossos Safaris?</h2>
+            <div class="safaris-porque-grid">
+                <div class="porque-safari-item">
+                    <div class="porque-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Segurança</h4>
+                    <p>Guias experientes e equipamentos de segurança de qualidade.</p>
+                </div>
+                <div class="porque-safari-item">
+                    <div class="porque-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Guias Locais</h4>
+                    <p>Especialistas angolanos que conhecem cada recanto do país.</p>
+                </div>
+                <div class="porque-safari-item">
+                    <div class="porque-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h4>Experiência Única</h4>
+                    <p>Safaris personalizados para todos os tipos de viajantes.</p>
+                </div>
+                <div class="porque-safari-item">
+                    <div class="porque-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4>Paixão pela Natureza</h4>
+                    <p>Respeito pela vida selvagem e pelo meio ambiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="safaris-newsletter">
+        <div class="container">
+            <div class="safaris-newsletter-wrapper">
+                <div class="safaris-newsletter-content">
+                    <h2>Receba novidades</h2>
+                    <p>Inscreva-se para receber novos safaris e ofertas exclusivas.</p>
+                </div>
+                <form class="safaris-newsletter-form">
+                    <input type="email" placeholder="Seu email" required>
+                    <button type="submit">Inscrever</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.desc">
+                        Curadoria de experiências únicas nos destinos mais impressionantes de Angola. 
+                        Sua próxima aventura merece esse cuidado.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="sobre.html" data-i18n="nav.sobre">Sobre</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== NOTIFICAÇÕES ===== -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+    <script src="../js/safaris.js"></script>
+
+</body>
+</html>

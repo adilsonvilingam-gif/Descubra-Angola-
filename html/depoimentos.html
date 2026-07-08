@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depoimentos | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/depoimentos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="planeje.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO DA PÁGINA ===== -->
+    <section class="depoimentos-hero">
+        <div class="depoimentos-hero-overlay"></div>
+        <div class="container">
+            <div class="depoimentos-hero-content">
+                <span class="depoimentos-hero-badge">DEPOIMENTOS</span>
+                <h1>O que dizem os nossos viajantes</h1>
+                <p>Histórias reais de quem viveu a experiência de descobrir Angola connosco.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ESTATÍSTICAS ===== -->
+    <section class="depoimentos-stats">
+        <div class="container">
+            <div class="depoimentos-stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">4.9</span>
+                    <span class="stat-label">⭐ Avaliação média</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Depoimentos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Recomendam</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100K+</span>
+                    <span class="stat-label">Viajantes felizes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DEPOIMENTOS ===== -->
+    <section class="depoimentos-lista">
+        <div class="container">
+            <div class="depoimentos-grid">
+                <!-- Depoimento 1 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"Mudei de cidade e a Descubra Angola cuidou de tudo à distância. Confiança total."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">FR</div>
+                        <div class="depoimento-info">
+                            <h4>Felipe Rocha</h4>
+                            <span>Golf 2, Luanda</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"Comprei um imóvel para investimento e a rentabilidade superou as expectativas."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">AS</div>
+                        <div class="depoimento-info">
+                            <h4>André Souza</h4>
+                            <span>Prenda, Luanda</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"A experiência no Parque da Kissama foi incrível! Guias atenciosos e natureza exuberante."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">JP</div>
+                        <div class="depoimento-info">
+                            <h4>Juliana Pires</h4>
+                            <span>Talatona, Luanda</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 4 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"A Serra da Leba é simplesmente deslumbrante! A estrada em curva é uma experiência única."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">JS</div>
+                        <div class="depoimento-info">
+                            <h4>João Santos</h4>
+                            <span>Lisboa, Portugal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 5 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"As Quedas do Kalandula são majestosas! Uma das maiores quedas de água de África."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">PF</div>
+                        <div class="depoimento-info">
+                            <h4>Pedro Ferreira</h4>
+                            <span>Rio de Janeiro, Brasil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 6 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"O tour cultural em Luanda foi fantástico! Museus, história e arquitetura colonial incríveis."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">SL</div>
+                        <div class="depoimento-info">
+                            <h4>Sofia Lopes</h4>
+                            <span>Porto, Portugal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 7 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"O Deserto do Namibe é um lugar mágico! Dunas e o Arco do Namibe são de tirar o fôlego."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">CM</div>
+                        <div class="depoimento-info">
+                            <h4>Carlos Mendes</h4>
+                            <span>Luanda, Angola</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 8 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"A Palanca Negra é um símbolo lindo de Angola! Ver este animal no seu habitat foi emocionante."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">IR</div>
+                        <div class="depoimento-info">
+                            <h4>Isabel Rodrigues</h4>
+                            <span>Lisboa, Portugal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 9 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"Mbanza Kongo é um lugar cheio de história! Património Mundial da UNESCO fascinante."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">RO</div>
+                        <div class="depoimento-info">
+                            <h4>Rui Oliveira</h4>
+                            <span>Coimbra, Portugal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 10 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"A Ilha do Mussulo é um paraíso! Praias de areia branca e águas cristalinas. Perfeito para relaxar."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">MC</div>
+                        <div class="depoimento-info">
+                            <h4>Maria Costa</h4>
+                            <span>São Paulo, Brasil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 11 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"Os museus de Luanda são imperdíveis! A história e a cultura angolana são riquíssimas."</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">AM</div>
+                        <div class="depoimento-info">
+                            <h4>Ana Martins</h4>
+                            <span>Maputo, Moçambique</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 12 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-texto">
+                        <p>"O safari no Parque Nacional do Iona superou todas as expectativas. Uma experiência única!"</p>
+                    </div>
+                    <div class="depoimento-autor">
+                        <div class="depoimento-iniciais">TN</div>
+                        <div class="depoimento-info">
+                            <h4>Tiago Nunes</h4>
+                            <span>Lisboa, Portugal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carregar mais -->
+            <div class="depoimentos-load-more">
+                <button class="btn-load-more-depoimentos" id="loadMoreDepoimentos">
+                    <i class="fas fa-sync-alt"></i> Carregar mais depoimentos
+                </button>
+            </div>
+
+            <!-- Deixar o seu depoimento -->
+            <div class="depoimentos-cta">
+                <div class="depoimentos-cta-content">
+                    <h2>Já visitou Angola?</h2>
+                    <p>Partilhe a sua experiência connosco e ajude outros viajantes a descobrir este país incrível.</p>
+                    <a href="contacto.html" class="btn-depoimento-cta">
+                        <i class="fas fa-pen"></i> Deixar depoimento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.desc">
+                        Curadoria de experiências únicas nos destinos mais impressionantes de Angola. 
+                        Sua próxima aventura merece esse cuidado.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="sobre.html" data-i18n="nav.sobre">Sobre</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== NOTIFICAÇÕES ===== -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+    <script src="../js/depoimentos.js"></script>
+
+</body>
+</html>

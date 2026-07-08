@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra Angola | The Rhythm of Life</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active" data-i18n="nav.home">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html">Norte de Angola</a></li>
+                            <li><a href="destinos.html">Centro de Angola</a></li>
+                            <li><a href="destinos.html">Sul de Angola</a></li>
+                            <li><a href="destinos.html">Leste de Angola</a></li>
+                            <li><a href="destinos.html">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="planeje.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO COM CARROSSEL ===== -->
+    <section id="home" class="hero hero-carousel">
+        <div class="hero-carousel-wrapper">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+                <img src="../media/hero.jpg" alt="Palanca Negra Gigante">
+                <div class="hero-slide-overlay"></div>
+                
+                <div class="hero-slide-content">
+                    <div class="hero-slide-text">
+                        <span class="hero-slide-badge" data-i18n="hero.slide1.badge">PROCURA UM SAFARI<br>PERSONALIZADO EM<br>ANGOLA?</span>
+                        <p class="hero-slide-subtitle" data-i18n="hero.slide1.subtitle">Mais de 300.000 clientes satisfeitos</p>
+                        <a href="planeje.html" class="btn btn-primary hero-slide-btn" data-i18n="hero.slide1.button">PLANEJE AGORA</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <img src="../media/hero2.jpg" alt="Miradouro da Lua">
+                <div class="hero-slide-overlay"></div>
+                
+                <div class="hero-slide-content">
+                    <div class="hero-slide-text">
+                        <span class="hero-slide-badge" data-i18n="hero.slide2.badge">A MELHOR EM VIAGENS<br>DE LUXO EM ANGOLA</span>
+                        <p class="hero-slide-subtitle" data-i18n="hero.slide2.subtitle">Eleita a empresa líder de safári em Angola</p>
+                        <a href="planeje.html" class="btn btn-primary hero-slide-btn" data-i18n="hero.slide2.button">PLANEJE AGORA</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <img src="../media/hero3.png" alt="Quedas do Kalandula">
+                <div class="hero-slide-overlay"></div>
+                
+                <div class="hero-slide-content">
+                    <div class="hero-slide-text">
+                        <span class="hero-slide-badge" data-i18n="hero.slide3.badge">SAFARIS DE LUXO<br>À MEDIDA DESDE 2004</span>
+                        <p class="hero-slide-subtitle" data-i18n="hero.slide3.subtitle">Descubra o melhor de Angola connosco</p>
+                        <a href="planeje.html" class="btn btn-primary hero-slide-btn" data-i18n="hero.slide3.button">PLANEJE AGORA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-carousel-dots">
+            <span class="hero-dot active" data-slide="0"></span>
+            <span class="hero-dot" data-slide="1"></span>
+            <span class="hero-dot" data-slide="2"></span>
+        </div>
+        
+        <div class="hero-carousel-controls">
+            <button class="hero-carousel-btn prev" id="heroPrev">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="hero-carousel-btn next" id="heroNext">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== LOADING SKELETON ===== -->
+    <div id="loadingSkeleton" class="skeleton-wrapper">
+        <div class="skeleton-header"></div>
+        <div class="skeleton-grid">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+    </div>
+
+    <!-- ===== SOBRE COM VÍDEO ===== -->
+    <section id="sobre" class="sobre sobre-com-video">
+        <div class="container">
+            <div class="sobre-grid">
+                <div class="sobre-video-wrapper">
+                    <div class="video-container" id="videoContainer">
+                        <video id="sobreVideo" class="sobre-video" playsinline preload="metadata">
+                            <source src="../media/DescubraAngola.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos.
+                        </video>
+                        <div class="video-overlay" id="videoOverlay">
+                            <button class="video-play-btn" id="videoPlayBtn">▶</button>
+                            <span class="video-title">Descubra Angola</span>
+                            <span class="video-subtitle">O ritmo da vida</span>
+                        </div>
+                        <div class="video-controls" id="videoControls">
+                            <button class="video-control-btn" id="videoTogglePlay">▶</button>
+                            <input type="range" id="videoProgress" min="0" max="100" value="0">
+                            <span class="video-time" id="videoTime">0:00 / 0:00</span>
+                            <button class="video-control-btn" id="videoVolumeBtn">🔊</button>
+                            <button class="video-control-btn" id="videoFullscreenBtn">⛶</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sobre-content">
+                    <h2 data-i18n="sobre.title">Bem-vindo a Angola</h2>
+                    <p data-i18n="sobre.text">Descubra a riqueza cultural, a hospitalidade do povo angolano e as paisagens que fazem deste país um destino verdadeiramente especial.</p>
+                    <div class="sobre-numbers">
+                        <div class="number-item">
+                            <span class="number">18</span>
+                            <span class="number-label" data-i18n="sobre.provincias">Províncias</span>
+                        </div>
+                        <div class="number-item">
+                            <span class="number">50+</span>
+                            <span class="number-label" data-i18n="sobre.destinos">Destinos</span>
+                        </div>
+                        <div class="number-item">
+                            <span class="number">100%</span>
+                            <span class="number-label" data-i18n="sobre.aventura">Aventura</span>
+                        </div>
+                    </div>
+                    <a href="destinos.html" class="btn btn-explorar" data-i18n="sobre.button">Explorar Destinos →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SLIDESHOW ===== -->
+    <section class="slideshow-section">
+        <div class="container">
+            <div class="slideshow-container">
+                <div class="slideshow-wrapper">
+                    <div class="slide active">
+                        <img src="../media/serra-leba2.png" alt="Serra da Leba">
+                        <div class="slide-content">
+                            <h3 data-i18n="slideshow.slide1.title">Serra da Leba</h3>
+                            <p data-i18n="slideshow.slide1.desc">Vista espetacular a 1.800m de altitude</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="../media/MiradouroDaLua.jpg" alt="Miradouro da Lua">
+                        <div class="slide-content">
+                            <h3 data-i18n="slideshow.slide2.title">Miradouro da Lua</h3>
+                            <p data-i18n="slideshow.slide2.desc">Pôr do sol inesquecível</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="../media/kalandula.jpg" alt="Quedas do Kalandula">
+                        <div class="slide-content">
+                            <h3 data-i18n="slideshow.slide3.title">Quedas do Kalandula</h3>
+                            <p data-i18n="slideshow.slide3.desc">Uma das maiores quedas de África</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="../media/Floresta-do-Maiombe.png" alt="Floresta do Maiombe">
+                        <div class="slide-content">
+                            <h3 data-i18n="slideshow.slide4.title">Floresta do Maiombe</h3>
+                            <p data-i18n="slideshow.slide4.desc">Uma das maiores florestas tropicais de África</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="../media/IlhaDoMussulo.jpg" alt="Ilha do Mussulo">
+                        <div class="slide-content">
+                            <h3 data-i18n="slideshow.slide5.title">Ilha do Mussulo</h3>
+                            <p data-i18n="slideshow.slide5.desc">Praias paradisíacas perto de Luanda</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="../media/palanca-negra.png" alt="Palanca Negra">
+                        <div class="slide-content">
+                            <h3 data-i18n="slideshow.slide6.title">Palanca Negra</h3>
+                            <p data-i18n="slideshow.slide6.desc">O símbolo nacional de Angola</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="../media/kissama.png" alt="Parque da Kissama">
+                        <div class="slide-content">
+                            <h3 data-i18n="slideshow.slide7.title">Parque da Kissama</h3>
+                            <p data-i18n="slideshow.slide7.desc">Vida selvagem no coração de Angola</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="../media/fenda-da-tundavala.png" alt="Fenda da Tundavala">
+                        <div class="slide-content">
+                            <h3 data-i18n="slideshow.slide8.title">Fenda da Tundavala</h3>
+                            <p data-i18n="slideshow.slide8.desc">Uma das maiores falésias de África</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="slide-btn prev">❮</button>
+                <button class="slide-btn next">❯</button>
+                <div class="slide-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO DESTINOS ===== -->
+    <section id="destinos" class="destinos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">✦ DESTINOS</span>
+                <h2 class="section-title" data-i18n="destinos.title">Experiências Inesquecíveis</h2>
+                <p class="section-subtitle" data-i18n="destinos.subtitle">Os lugares mais impressionantes de Angola</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../media/serra-leba.webp" alt="Serra da Leba">
+                        <span class="card-tag" data-i18n="destinos.card1.tag">Huíla</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-i18n="destinos.card1.title">Serra da Leba</h3>
+                        <a href="serra-leba.html" class="card-btn">Explorar →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../media/MiradouroDaLua.jpg" alt="Miradouro da Lua">
+                        <span class="card-tag" data-i18n="destinos.card2.tag">Luanda</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-i18n="destinos.card2.title">Miradouro da Lua</h3>
+                        <a href="miradouro-da-lua.html" class="card-btn">Explorar →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../media/kalandula.jpg" alt="Quedas do Kalandula">
+                        <span class="card-tag" data-i18n="destinos.card3.tag">Malanje</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-i18n="destinos.card3.title">Quedas do Kalandula</h3>
+                        <a href="quedas-do-kalandula.html" class="card-btn">Explorar →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../media/IlhaDoMussulo.jpg" alt="Ilha do Mussulo">
+                        <span class="card-tag" data-i18n="destinos.card4.tag">Luanda</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-i18n="destinos.card4.title">Ilha do Mussulo</h3>
+                        <a href="ilha-do-mussulo.html" class="card-btn">Explorar →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../media/Tundavala.jpg" alt="Fenda da Tundavala">
+                        <span class="card-tag" data-i18n="destinos.card5.tag">Huíla</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-i18n="destinos.card5.title">Fenda da Tundavala</h3>
+                        <a href="fenda-da-tundavala.html" class="card-btn">Explorar →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../media/kissama.png" alt="Parque da Kissama">
+                        <span class="card-tag" data-i18n="destinos.card6.tag">Bengo</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-i18n="destinos.card6.title">Parque da Kissama</h3>
+                        <a href="parque-da-kissama.html" class="card-btn">Explorar →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <a href="destinos.html" class="btn btn-ver-todos" data-i18n="destinos.verTodos">Ver Todos os Destinos →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RECOMENDAÇÕES ===== -->
+    <section class="recomendacoes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">✦ RECOMENDAMOS</span>
+                <h2 class="section-title" data-i18n="recomendamos.title">Safaris e Experiências</h2>
+                <p class="section-subtitle" data-i18n="recomendamos.subtitle">As melhores aventuras em Angola</p>
+            </div>
+            
+            <div class="recomendacoes-grid">
+                <div class="recomendacao-item">
+                    <div class="recomendacao-image">
+                        <img src="../media/safari-kissama.png" alt="Safari" onerror="this.style.display='none'">
+                        <span class="recomendacao-preco">€150</span>
+                    </div>
+                    <div class="recomendacao-info">
+                        <h3 data-i18n="recomendacoes.item1.title">Safari no Parque da Kissama</h3>
+                        <p data-i18n="recomendacoes.item1.desc">Explore a vida selvagem angolana</p>
+                        <a href="destinos.html" class="recomendacao-link">Saiba mais →</a>
+                    </div>
+                </div>
+                
+                <div class="recomendacao-item">
+                    <div class="recomendacao-image">
+                        <img src="../media/cultura-angola.png" alt="Cultura" onerror="this.style.display='none'">
+                        <span class="recomendacao-preco">€80</span>
+                    </div>
+                    <div class="recomendacao-info">
+                        <h3 data-i18n="recomendacoes.item2.title">Tour Cultural em Luanda</h3>
+                        <p data-i18n="recomendacoes.item2.desc">Descubra a história e a cultura</p>
+                        <a href="cultura.html" class="recomendacao-link">Saiba mais →</a>
+                    </div>
+                </div>
+                
+                <div class="recomendacao-item">
+                    <div class="recomendacao-image">
+                        <img src="../media/aventura-huila.png" alt="Aventura" onerror="this.style.display='none'">
+                        <span class="recomendacao-preco">€120</span>
+                    </div>
+                    <div class="recomendacao-info">
+                        <h3 data-i18n="recomendacoes.item3.title">Aventura na Serra da Leba</h3>
+                        <p data-i18n="recomendacoes.item3.desc">Trilhas e paisagens incríveis</p>
+                        <a href="destinos.html" class="recomendacao-link">Saiba mais →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <a href="recomendamos.html" class="btn btn-ver-todas" data-i18n="recomendamos.verTodas">
+                    Ver Todas as Recomendações →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCURA DE SAFARI ===== -->
+    <section class="procura-safari">
+        <div class="container">
+            <div class="procura-safari-wrapper">
+                <div class="procura-safari-content">
+                    <span class="section-tag">✦ PLANEJE SUA AVENTURA</span>
+                    <h2 data-i18n="safari.title">Procura um Safari Personalizado em Angola?</h2>
+                    <p data-i18n="safari.text">Mais de 10.000 clientes satisfeitos já viveram a experiência de descobrir Angola connosco. Planeje agora a sua aventura dos sonhos.</p>
+                    <div class="procura-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100K+</span>
+                            <span class="stat-label" data-i18n="safari.stat.clientes">Clientes satisfeitos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">99%</span>
+                            <span class="stat-label" data-i18n="safari.stat.satisfacao">Taxa de satisfação</span>
+                        </div>
+                    </div>
+                    <a href="planeje.html" class="btn btn-safari" data-i18n="safari.button">Planeje Agora →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-wrapper">
+                <h2 data-i18n="newsletter.title">📬 Receba novidades</h2>
+                <p data-i18n="newsletter.text">Inscreva-se para receber dicas de viagem e ofertas exclusivas</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu email" required>
+                    <button type="submit" class="btn btn-newsletter" data-i18n="newsletter.button">Inscrever</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.desc">Curadoria de experiências únicas nos destinos mais impressionantes de Angola. Sua próxima aventura merece esse cuidado.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="sobre.html" data-i18n="nav.sobre">Sobre</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== NOTIFICAÇÕES ===== -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- ===== CHATBOT ===== -->
+    <button id="chatToggle" class="chat-toggle" aria-label="Abrir chat">💬</button>
+
+    <div id="chatWidget" class="chat-widget">
+        <div class="chat-header">
+            <span data-i18n="chat.title">🤖 Assistente</span>
+            <button id="chatClose" class="chat-close">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message bot">
+                Olá! 👋<br>
+                Como posso ajudar você a descobrir Angola?
+            </div>
+        </div>
+        <div class="chat-options" id="chatOptions">
+            <button class="chat-option" data-question="destinos" data-i18n="chat.options.destinos">🌍 Destinos</button>
+            <button class="chat-option" data-question="safaris" data-i18n="chat.options.safaris">🦒 Safaris</button>
+            <button class="chat-option" data-question="precos" data-i18n="chat.options.precos">💰 Preços</button>
+            <button class="chat-option" data-question="contato" data-i18n="chat.options.contato">📞 Contacto</button>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Digite sua pergunta..." data-i18n-placeholder="chat.placeholder">
+            <button id="chatSend" data-i18n="chat.send">Enviar</button>
+        </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/comments.js"></script>
+    <script src="../js/favorites.js"></script>
+    <script src="../js/chat.js"></script>
+    <script src="../js/analytics.js"></script>
+    <script src="../js/pwa.js"></script>
+    <script src="../js/slideshow.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/rating.js"></script>
+    <script src="../js/destinos.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passeios | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/passeios.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html" class="active" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="planeje.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO DA PÁGINA ===== -->
+    <section class="passeios-hero">
+        <div class="passeios-hero-overlay"></div>
+        <div class="container">
+            <div class="passeios-hero-content">
+                <span class="passeios-hero-badge">PASSEIOS</span>
+                <h1>Explore Angola</h1>
+                <p>Descubra os melhores passeios e experiências que Angola tem para oferecer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIAS ===== -->
+    <section class="passeios-categorias">
+        <div class="container">
+            <div class="passeios-categorias-wrapper">
+                <button class="passeio-cat active" data-cat="todos">Todos</button>
+                <button class="passeio-cat" data-cat="culturais">Culturais</button>
+                <button class="passeio-cat" data-cat="natureza">Natureza</button>
+                <button class="passeio-cat" data-cat="historicos">Históricos</button>
+                <button class="passeio-cat" data-cat="aventura">Aventura</button>
+                <button class="passeio-cat" data-cat="personalizados">Personalizados</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LISTA DE PASSEIOS ===== -->
+    <section class="passeios-lista">
+        <div class="container">
+            <div class="passeios-grid" id="passeiosGrid">
+                <!-- Passeio 1 -->
+                <div class="passeio-card" data-cat="culturais">
+                    <div class="passeio-image">
+                        <img src="../media/museuantropologia.jpg" alt="Tour Cultural">
+                        <span class="passeio-duracao">4h</span>
+                    </div>
+                    <div class="passeio-content">
+                        <span class="passeio-categoria">Cultural</span>
+                        <h3>Tour Cultural em Luanda</h3>
+                        <p>Descubra a história e a cultura de Luanda com um guia local especializado.</p>
+                        <div class="passeio-meta">
+                            <span><i class="fas fa-users"></i> 4-10 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 4 horas</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.8</span>
+                        </div>
+                        <div class="passeio-footer">
+                            <span class="passeio-preco">€80</span>
+                            <a href="#" class="passeio-btn">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passeio 2 -->
+                <div class="passeio-card" data-cat="natureza">
+                    <div class="passeio-image">
+                        <img src="../media/kalandula.jpg" alt="Quedas do Kalandula">
+                        <span class="passeio-duracao">6h</span>
+                    </div>
+                    <div class="passeio-content">
+                        <span class="passeio-categoria">Natureza</span>
+                        <h3>Visita às Quedas do Kalandula</h3>
+                        <p>Explore uma das maiores quedas de água de África com um guia especializado.</p>
+                        <div class="passeio-meta">
+                            <span><i class="fas fa-users"></i> 4-12 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 6 horas</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.9</span>
+                        </div>
+                        <div class="passeio-footer">
+                            <span class="passeio-preco">€120</span>
+                            <a href="#" class="passeio-btn">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passeio 3 -->
+                <div class="passeio-card" data-cat="historicos">
+                    <div class="passeio-image">
+                        <img src="../media/mbanza-kongo.jpg" alt="Mbanza Kongo">
+                        <span class="passeio-duracao">5h</span>
+                    </div>
+                    <div class="passeio-content">
+                        <span class="passeio-categoria">Histórico</span>
+                        <h3>Visita a Mbanza Kongo</h3>
+                        <p>Conheça a antiga capital do Reino do Kongo, Património Mundial da UNESCO.</p>
+                        <div class="passeio-meta">
+                            <span><i class="fas fa-users"></i> 4-10 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 5 horas</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.6</span>
+                        </div>
+                        <div class="passeio-footer">
+                            <span class="passeio-preco">€95</span>
+                            <a href="#" class="passeio-btn">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passeio 4 -->
+                <div class="passeio-card" data-cat="aventura">
+                    <div class="passeio-image">
+                        <img src="../media/serra-leba.webp" alt="Serra da Leba">
+                        <span class="passeio-duracao">3h</span>
+                    </div>
+                    <div class="passeio-content">
+                        <span class="passeio-categoria">Aventura</span>
+                        <h3>Trilha na Serra da Leba</h3>
+                        <p>Explore as montanhas da Serra da Leba com um guia especializado em aventura.</p>
+                        <div class="passeio-meta">
+                            <span><i class="fas fa-users"></i> 2-8 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 3 horas</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.8</span>
+                        </div>
+                        <div class="passeio-footer">
+                            <span class="passeio-preco">€60</span>
+                            <a href="#" class="passeio-btn">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passeio 5 -->
+                <div class="passeio-card" data-cat="culturais">
+                    <div class="passeio-image">
+                        <img src="../media/museumilitar.jpg" alt="Museu Militar">
+                        <span class="passeio-duracao">3h</span>
+                    </div>
+                    <div class="passeio-content">
+                        <span class="passeio-categoria">Cultural</span>
+                        <h3>Museu das Forças Armadas</h3>
+                        <p>Visita guiada ao Museu das Forças Armadas com um historiador especialista.</p>
+                        <div class="passeio-meta">
+                            <span><i class="fas fa-users"></i> 4-15 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 3 horas</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.2</span>
+                        </div>
+                        <div class="passeio-footer">
+                            <span class="passeio-preco">€45</span>
+                            <a href="#" class="passeio-btn">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passeio 6 -->
+                <div class="passeio-card" data-cat="natureza">
+                    <div class="passeio-image">
+                        <img src="../media/deserto.jpg" alt="Deserto do Namibe">
+                        <span class="passeio-duracao">8h</span>
+                    </div>
+                    <div class="passeio-content">
+                        <span class="passeio-categoria">Natureza</span>
+                        <h3>Deserto do Namibe 4x4</h3>
+                        <p>Aventura no deserto mais antigo do mundo com veículos 4x4.</p>
+                        <div class="passeio-meta">
+                            <span><i class="fas fa-users"></i> 4-8 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 8 horas</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.8</span>
+                        </div>
+                        <div class="passeio-footer">
+                            <span class="passeio-preco">€150</span>
+                            <a href="#" class="passeio-btn">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passeio 7 -->
+                <div class="passeio-card" data-cat="historicos">
+                    <div class="passeio-image">
+                        <img src="../media/forte-cuamato.jpg" alt="Forte de Cuamato">
+                        <span class="passeio-duracao">4h</span>
+                    </div>
+                    <div class="passeio-content">
+                        <span class="passeio-categoria">Histórico</span>
+                        <h3>Ruínas do Forte de Cuamato</h3>
+                        <p>Explore as ruínas históricas do Forte de Cuamato no coração do Cunene.</p>
+                        <div class="passeio-meta">
+                            <span><i class="fas fa-users"></i> 4-10 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 4 horas</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.0</span>
+                        </div>
+                        <div class="passeio-footer">
+                            <span class="passeio-preco">€70</span>
+                            <a href="#" class="passeio-btn">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passeio 8 -->
+                <div class="passeio-card" data-cat="aventura">
+                    <div class="passeio-image">
+                        <img src="../media/IlhaDoMussulo.jpg" alt="Ilha do Mussulo">
+                        <span class="passeio-duracao">6h</span>
+                    </div>
+                    <div class="passeio-content">
+                        <span class="passeio-categoria">Aventura</span>
+                        <h3>Ilha do Mussulo - Atividades Aquáticas</h3>
+                        <p>Desfrute de um dia de sol e atividades aquáticas na Ilha do Mussulo.</p>
+                        <div class="passeio-meta">
+                            <span><i class="fas fa-users"></i> 4-12 pessoas</span>
+                            <span><i class="fas fa-clock"></i> 6 horas</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 4.6</span>
+                        </div>
+                        <div class="passeio-footer">
+                            <span class="passeio-preco">€90</span>
+                            <a href="#" class="passeio-btn">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passeio 9 -->
+                <div class="passeio-card" data-cat="personalizados">
+                    <div class="passeio-image">
+                        <img src="../media/hero.jpg" alt="Personalizado">
+                        <span class="passeio-duracao">Flexível</span>
+                    </div>
+                    <div class="passeio-content">
+                        <span class="passeio-categoria">Personalizado</span>
+                        <h3>Roteiro Personalizado</h3>
+                        <p>Crie o seu próprio roteiro com a ajuda dos nossos especialistas em turismo.</p>
+                        <div class="passeio-meta">
+                            <span><i class="fas fa-users"></i> 1-20 pessoas</span>
+                            <span><i class="fas fa-clock"></i> Flexível</span>
+                            <span><i class="fas fa-star" style="color:#FFB703;"></i> 5.0</span>
+                        </div>
+                        <div class="passeio-footer">
+                            <span class="passeio-preco">Sob consulta</span>
+                            <a href="#" class="passeio-btn">Ver detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carregar mais -->
+            <div class="passeios-load-more">
+                <button class="btn-load-more-passeios" id="loadMorePasseios">
+                    <i class="fas fa-sync-alt"></i> Carregar mais passeios
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="passeios-newsletter">
+        <div class="container">
+            <div class="passeios-newsletter-wrapper">
+                <div class="passeios-newsletter-content">
+                    <h2>Receba novidades</h2>
+                    <p>Inscreva-se para receber novos passeios e ofertas exclusivas.</p>
+                </div>
+                <form class="passeios-newsletter-form">
+                    <input type="email" placeholder="Seu email" required>
+                    <button type="submit">Inscrever</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.desc">
+                        Curadoria de experiências únicas nos destinos mais impressionantes de Angola. 
+                        Sua próxima aventura merece esse cuidado.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="sobre.html" data-i18n="nav.sobre">Sobre</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== NOTIFICAÇÕES ===== -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+    <script src="../js/passeios.js"></script>
+
+</body>
+</html>

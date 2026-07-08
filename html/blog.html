@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html" class="active" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="planeje.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO DA PÁGINA ===== -->
+    <section class="blog-hero">
+        <div class="blog-hero-overlay"></div>
+        <div class="container">
+            <div class="blog-hero-content">
+                <span class="blog-hero-badge">BLOG</span>
+                <h1>Descubra Angola</h1>
+                <p>Artigos, dicas e histórias sobre os destinos mais incríveis de Angola.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIAS ===== -->
+    <section class="blog-categorias">
+        <div class="container">
+            <div class="blog-categorias-wrapper">
+                <button class="blog-cat active" data-cat="todos">Todos</button>
+                <button class="blog-cat" data-cat="destinos">Destinos</button>
+                <button class="blog-cat" data-cat="cultura">Cultura</button>
+                <button class="blog-cat" data-cat="aventura">Aventura</button>
+                <button class="blog-cat" data-cat="gastronomia">Gastronomia</button>
+                <button class="blog-cat" data-cat="dicas">Dicas</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POSTS ===== -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="blog-grid" id="blogGrid">
+                <!-- Post 1 -->
+                <article class="blog-post" data-cat="destinos">
+                    <div class="blog-post-image">
+                        <img src="../media/serra-leba.webp" alt="Serra da Leba">
+                        <span class="blog-post-categoria">Destinos</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span><i class="far fa-calendar-alt"></i> 15 Jun 2026</span>
+                            <span><i class="far fa-clock"></i> 5 min leitura</span>
+                        </div>
+                        <h3>Serra da Leba: A Estrada Mais Famosa de Angola</h3>
+                        <p>Descubra a história e as belezas da Serra da Leba, um dos destinos mais impressionantes de Angola.</p>
+                        <a href="post-serra-leba.html" class="blog-post-link">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="blog-post" data-cat="cultura">
+                    <div class="blog-post-image">
+                        <img src="../media/museuantropologia.jpg" alt="Museu Nacional de Antropologia">
+                        <span class="blog-post-categoria">Cultura</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span><i class="far fa-calendar-alt"></i> 10 Jun 2026</span>
+                            <span><i class="far fa-clock"></i> 4 min leitura</span>
+                        </div>
+                        <h3>Museus de Luanda: Um Mergulho na História de Angola</h3>
+                        <p>Conheça os principais museus da capital angolana e descubra a rica história e cultura do país.</p>
+                        <a href="post-museus-luanda.html" class="blog-post-link">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="blog-post" data-cat="aventura">
+                    <div class="blog-post-image">
+                        <img src="../media/deserto.jpg" alt="Deserto do Namibe">
+                        <span class="blog-post-categoria">Aventura</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span><i class="far fa-calendar-alt"></i> 5 Jun 2026</span>
+                            <span><i class="far fa-clock"></i> 6 min leitura</span>
+                        </div>
+                        <h3>Aventura no Deserto do Namibe: O Que Fazer</h3>
+                        <p>Prepare-se para uma aventura única no deserto mais antigo do mundo, com dunas e paisagens surreais.</p>
+                        <a href="post-deserto-namibe.html" class="blog-post-link">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="blog-post" data-cat="gastronomia">
+                    <div class="blog-post-image">
+                        <img src="../media/IlhaDoMussulo.jpg" alt="Gastronomia Angolana">
+                        <span class="blog-post-categoria">Gastronomia</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span><i class="far fa-calendar-alt"></i> 28 Mai 2026</span>
+                            <span><i class="far fa-clock"></i> 4 min leitura</span>
+                        </div>
+                        <h3>Sabores de Angola: O Melhor da Gastronomia Local</h3>
+                        <p>Descubra os pratos típicos angolanos e os melhores restaurantes para provar a verdadeira culinária do país.</p>
+                        <a href="post-gastronomia.html" class="blog-post-link">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="blog-post" data-cat="dicas">
+                    <div class="blog-post-image">
+                        <img src="../media/kalandula.jpg" alt="Dicas de Viagem">
+                        <span class="blog-post-categoria">Dicas</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span><i class="far fa-calendar-alt"></i> 20 Mai 2026</span>
+                            <span><i class="far fa-clock"></i> 5 min leitura</span>
+                        </div>
+                        <h3>10 Dicas Essenciais para Viajar em Angola</h3>
+                        <p>Planeie a sua viagem com estas dicas essenciais sobre transporte, segurança, clima e muito mais.</p>
+                        <a href="post-dicas-viagem.html" class="blog-post-link">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="blog-post" data-cat="destinos">
+                    <div class="blog-post-image">
+                        <img src="../media/kissama.png" alt="Parque da Kissama">
+                        <span class="blog-post-categoria">Destinos</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span><i class="far fa-calendar-alt"></i> 15 Mai 2026</span>
+                            <span><i class="far fa-clock"></i> 5 min leitura</span>
+                        </div>
+                        <h3>Safari no Parque da Kissama: Vida Selvagem em Angola</h3>
+                        <p>Explore a vida selvagem no coração de Angola e descubra os animais que habitam o Parque da Kissama.</p>
+                        <a href="post-kissama.html" class="blog-post-link">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- ===== CARREGAR MAIS ===== -->
+            <div class="blog-load-more">
+                <button class="btn-load-more" id="loadMoreBtn">
+                    <i class="fas fa-sync-alt"></i> Carregar mais artigos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="blog-newsletter">
+        <div class="container">
+            <div class="blog-newsletter-wrapper">
+                <div class="blog-newsletter-content">
+                    <h2>Receba as novidades</h2>
+                    <p>Inscreva-se para receber os nossos artigos e dicas de viagem.</p>
+                </div>
+                <form class="blog-newsletter-form">
+                    <input type="email" placeholder="Seu email" required>
+                    <button type="submit">Inscrever</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.desc">
+                        Curadoria de experiências únicas nos destinos mais impressionantes de Angola. 
+                        Sua próxima aventura merece esse cuidado.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="sobre.html" data-i18n="nav.sobre">Sobre</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== NOTIFICAÇÕES ===== -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+    <script src="../js/blog.js"></script>
+
+</body>
+</html>

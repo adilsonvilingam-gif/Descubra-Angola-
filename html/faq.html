@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/faq.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <div id="progressBar"></div>
+
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                    <li class="dropdown">
+                        <a href="destinos.html" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">🌍 Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">🏙️ Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">🏔️ Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">🌳 Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">⭐ Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="regioes.html" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">🏛️ Passeios Culturais</a></li>
+                            <li><a href="regioes.html">🌿 Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">📜 Passeios Históricos</a></li>
+                            <li><a href="regioes.html">🧗 Passeios Aventura</a></li>
+                            <li><a href="regioes.html">🎯 Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="cultura.html" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">🦁 Safari na Kissama</a></li>
+                            <li><a href="cultura.html">🐘 Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">📸 Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">🔭 Safari de Observação</a></li>
+                            <li><a href="cultura.html">👨‍👩‍👧‍👦 Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">🏨 Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">🍽️ Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">🧭 Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">🚗 Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">💡 Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <select id="languageSelect" class="language-select">
+                        <option value="pt">🇵🇹 PT</option>
+                        <option value="en">🇬🇧 EN</option>
+                        <option value="fr">🇫🇷 FR</option>
+                    </select>
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    <a href="destinos.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="faq-hero">
+        <div class="faq-hero-overlay"></div>
+        <div class="container">
+            <div class="faq-hero-content">
+                <span class="faq-hero-badge">❓ FAQ</span>
+                <h1>Perguntas Frequentes</h1>
+                <p>Encontre respostas para as dúvidas mais comuns sobre o Descubra Angola.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-content">
+        <div class="container">
+            <div class="faq-categories">
+                <button class="faq-cat active" data-cat="geral">🌍 Geral</button>
+                <button class="faq-cat" data-cat="destinos">📍 Destinos</button>
+                <button class="faq-cat" data-cat="reservas">📋 Reservas</button>
+                <button class="faq-cat" data-cat="contas">👤 Conta</button>
+                <button class="faq-cat" data-cat="pagamentos">💳 Pagamentos</button>
+            </div>
+
+            <div class="faq-list">
+                <!-- Geral -->
+                <div class="faq-item" data-cat="geral">
+                    <div class="faq-question">
+                        <span>O que é o Descubra Angola?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O Descubra Angola é uma plataforma de turismo que oferece informações sobre destinos, passeios, safaris e experiências únicas em Angola. O nosso objetivo é ajudar viajantes a descobrir as belezas e culturas do país.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="geral">
+                    <div class="faq-question">
+                        <span>O site é gratuito?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! O acesso ao site e a todas as informações sobre destinos é completamente gratuito. Apenas os serviços de reserva e agendamento podem ter custos associados.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="geral">
+                    <div class="faq-question">
+                        <span>Preciso criar uma conta para usar o site?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não. Pode navegar por todos os destinos e informações sem criar uma conta. No entanto, para guardar favoritos, avaliar destinos ou fazer reservas, recomendamos que crie uma conta gratuita.</p>
+                    </div>
+                </div>
+
+                <!-- Destinos -->
+                <div class="faq-item" data-cat="destinos">
+                    <div class="faq-question">
+                        <span>Quantos destinos estão disponíveis?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Atualmente, o Descubra Angola tem mais de 30 destinos distribuídos por 18 províncias de Angola. Estamos constantemente a adicionar novos locais.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="destinos">
+                    <div class="faq-question">
+                        <span>Como posso pesquisar um destino?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pode pesquisar destinos usando a barra de pesquisa na página de Destinos, ou navegar por província ou região (Norte, Centro, Sul, Leste).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="destinos">
+                    <div class="faq-question">
+                        <span>As informações sobre os destinos são atualizadas?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Trabalhamos para manter todas as informações atualizadas. Se encontrar alguma informação desatualizada, por favor contacte-nos.</p>
+                    </div>
+                </div>
+
+                <!-- Reservas -->
+                <div class="faq-item" data-cat="reservas">
+                    <div class="faq-question">
+                        <span>Como faço uma reserva?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para fazer uma reserva, aceda à página do destino ou experiência desejada e clique em "Reservar" ou "Planeje Agora". Siga as instruções para completar o processo.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="reservas">
+                    <div class="faq-question">
+                        <span>Posso cancelar uma reserva?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, pode cancelar reservas de acordo com a política de cancelamento de cada serviço. Consulte os termos específicos na página de reserva.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="reservas">
+                    <div class="faq-question">
+                        <span>Preciso pagar antecipadamente?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Depende do serviço. Algumas experiências exigem pagamento antecipado, outras permitem pagamento no local. As condições são indicadas no momento da reserva.</p>
+                    </div>
+                </div>
+
+                <!-- Conta -->
+                <div class="faq-item" data-cat="contas">
+                    <div class="faq-question">
+                        <span>Como crio uma conta?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Clique em "Entrar" no canto superior direito do site e selecione a opção "Registrar". Preencha os dados e crie a sua conta gratuitamente.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="contas">
+                    <div class="faq-question">
+                        <span>Esqueci a minha senha. O que faço?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Na página de login, clique em "Esqueceu a senha?". Insira o seu email e receberá instruções para redefinir a sua senha.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="contas">
+                    <div class="faq-question">
+                        <span>Posso eliminar a minha conta?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. Pode solicitar a eliminação da sua conta através do menu de configurações ou entrando em contacto connosco.</p>
+                    </div>
+                </div>
+
+                <!-- Pagamentos -->
+                <div class="faq-item" data-cat="pagamentos">
+                    <div class="faq-question">
+                        <span>Quais métodos de pagamento são aceites?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceitamos pagamentos via cartão de crédito (Visa, Mastercard), transferência bancária e pagamentos móveis (em breve).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="pagamentos">
+                    <div class="faq-question">
+                        <span>O pagamento é seguro?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. Utilizamos tecnologia de criptografia SSL para proteger todos os dados de pagamento e garantir a sua segurança.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-cat="pagamentos">
+                    <div class="faq-question">
+                        <span>Recebo um comprovativo do pagamento?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. Após a confirmação do pagamento, enviaremos um comprovativo para o seu email.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-contact">
+                <p>Não encontrou a resposta para a sua pergunta?</p>
+                <a href="contacto.html" class="btn-faq-contact">
+                    <i class="fas fa-envelope"></i> Fale Connosco
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo"><h3><span>Descubra</span> Angola</h3><p>THE RHYTHM OF LIFE</p></div>
+                    <p class="footer-description" data-i18n="footer.desc">Curadoria de experiências únicas nos destinos mais impressionantes de Angola. Sua próxima aventura merece esse cuidado.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p></div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+    <script src="../js/main.js"></script>
+    <script src="../js/faq.js"></script>
+
+</body>
+</html>

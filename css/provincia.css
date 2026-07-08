@@ -1,0 +1,468 @@
+/* =============================================
+   PROVINCIA.CSS - Página da Província
+   ============================================= */
+
+/* ===== HERO ===== */
+.provincia-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 140px 0 60px;
+}
+
+.provincia-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.provincia-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.50) 100%);
+    z-index: 1;
+}
+
+.provincia-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.provincia-hero-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.provincia-hero-badge {
+    display: inline-block;
+    background: rgba(255,183,3,0.15);
+    color: #FFB703;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.provincia-hero-text h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -1.5px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+.provincia-hero-text p {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 25px;
+}
+
+.provincia-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.provincia-hero-stats .hero-stat {
+    text-align: center;
+}
+
+.provincia-hero-stats .hero-stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #FFB703;
+    line-height: 1;
+}
+
+.provincia-hero-stats .hero-stat-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+}
+
+/* ===== DESTINOS DA PROVÍNCIA ===== */
+.provincia-destinos {
+    padding: 60px 0 80px;
+    background: #f8f9fa;
+}
+
+.provincia-destinos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.provincia-destinos-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+.provincia-destinos-header h2 span {
+    color: #FFB703;
+}
+
+.btn-voltar-provincia {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background: transparent;
+    border: 2px solid #0F172A;
+    border-radius: 50px;
+    color: #0F172A;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-voltar-provincia:hover {
+    background: #0F172A;
+    color: white;
+    transform: translateX(-4px);
+}
+
+.provincia-destinos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* ===== CARD DE DESTINO ===== */
+.provincia-destino-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    transition: all 0.4s ease;
+    animation: fadeInUp 0.5s ease;
+}
+
+.provincia-destino-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.provincia-destino-card .destino-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.provincia-destino-card .destino-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.provincia-destino-card:hover .destino-image img {
+    transform: scale(1.05);
+}
+
+.provincia-destino-card .destino-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #FFB703;
+    color: #0F172A;
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.provincia-destino-card .destino-content {
+    padding: 20px 24px 24px;
+}
+
+.provincia-destino-card .destino-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 6px;
+}
+
+.provincia-destino-card .destino-content .destino-local {
+    color: #888;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.provincia-destino-card .destino-content .destino-local i {
+    color: #E85D04;
+}
+
+.provincia-destino-card .destino-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.provincia-destino-card .destino-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.provincia-destino-card .destino-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #FFB703;
+    font-weight: 600;
+}
+
+.provincia-destino-card .destino-rating span {
+    color: #666;
+    font-weight: 400;
+}
+
+.provincia-destino-card .destino-btn {
+    padding: 8px 20px;
+    background: #FFB703;
+    color: #0F172A;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.provincia-destino-card .destino-btn:hover {
+    background: #E85D04;
+    color: white;
+    transform: translateX(4px);
+}
+
+/* ===== LOADING ===== */
+.provincia-loading {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.provincia-loading i {
+    font-size: 3rem;
+    color: #FFB703;
+    margin-bottom: 15px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.provincia-loading p {
+    color: #888;
+    font-size: 1rem;
+}
+
+/* ===== NO RESULTS ===== */
+.provincia-no-results {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.provincia-no-results i {
+    font-size: 3rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.provincia-no-results h3 {
+    color: #0F172A;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.provincia-no-results p {
+    color: #888;
+}
+
+/* =============================================
+   RESPONSIVO
+   ============================================= */
+
+@media (max-width: 992px) {
+    .provincia-hero-text h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .provincia-hero {
+        min-height: 40vh;
+        padding: 120px 0 40px;
+    }
+    
+    .provincia-hero-text h1 {
+        font-size: 2.4rem;
+    }
+    
+    .provincia-hero-text p {
+        font-size: 1rem;
+    }
+    
+    .provincia-hero-stats {
+        gap: 25px;
+    }
+    
+    .provincia-hero-stats .hero-stat-number {
+        font-size: 2rem;
+    }
+    
+    .provincia-destinos-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .provincia-destinos-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .provincia-destinos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .provincia-hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .provincia-hero-badge {
+        font-size: 0.6rem;
+        padding: 4px 12px;
+    }
+    
+    .provincia-hero-stats {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .provincia-hero-stats .hero-stat-number {
+        font-size: 1.6rem;
+    }
+    
+    .provincia-destinos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-voltar-provincia {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =============================================
+   DARK MODE
+   ============================================= */
+
+body.dark-mode .provincia-hero-overlay {
+    background: linear-gradient(135deg, rgba(10,15,26,0.80) 0%, rgba(15,23,42,0.60) 100%);
+}
+
+body.dark-mode .provincia-destinos {
+    background: #0F172A;
+}
+
+body.dark-mode .provincia-destinos-header h2 {
+    color: white;
+}
+
+body.dark-mode .provincia-destino-card {
+    background: #1a2744;
+}
+
+body.dark-mode .provincia-destino-card .destino-content h3 {
+    color: white;
+}
+
+body.dark-mode .provincia-destino-card .destino-content p {
+    color: #aaa;
+}
+
+body.dark-mode .provincia-destino-card .destino-content .destino-local {
+    color: #888;
+}
+
+body.dark-mode .provincia-destino-card .destino-meta {
+    border-color: #2a3a5a;
+}
+
+body.dark-mode .provincia-destino-card .destino-rating span {
+    color: #888;
+}
+
+body.dark-mode .btn-voltar-provincia {
+    border-color: #FFB703;
+    color: #FFB703;
+}
+
+body.dark-mode .btn-voltar-provincia:hover {
+    background: #FFB703;
+    color: #0F172A;
+}
+
+body.dark-mode .provincia-no-results h3 {
+    color: white;
+}
+
+body.dark-mode .provincia-no-results p {
+    color: #888;
+}

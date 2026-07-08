@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/privacidade.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html" data-i18n="nav.destinos">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html" data-i18n="nav.passeios">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">Passeios Culturais</a></li>
+                            <li><a href="regioes.html">Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">Passeios Históricos</a></li>
+                            <li><a href="regioes.html">Passeios Aventura</a></li>
+                            <li><a href="regioes.html">Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html" data-i18n="nav.safaris">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">Safari na Kissama</a></li>
+                            <li><a href="cultura.html">Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">Safari de Observação</a></li>
+                            <li><a href="cultura.html">Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn" data-i18n="auth.logout">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="planeje.html" class="btn-nav" data-i18n="nav.planeje">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== PÁGINA DE PRIVACIDADE ===== -->
+    <section class="privacidade-page">
+        <div class="container">
+            <div class="privacidade-wrapper">
+                
+                <!-- ===== HEADER ===== -->
+                <div class="privacidade-header">
+                    <div class="privacidade-header-top">
+                        <span class="privacidade-badge">PRIVACIDADE</span>
+                        <h1>Política de Privacidade</h1>
+                        <p class="privacidade-update">Última atualização: 7 de Julho de 2026</p>
+                    </div>
+                    <div class="privacidade-intro">
+                        <p>A sua privacidade é importante para nós. Esta Política de Privacidade explica como coletamos, usamos, armazenamos e protegemos as suas informações pessoais ao utilizar o <strong>Descubra Angola</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- ===== ÍNDICE ===== -->
+                <div class="privacidade-indice">
+                    <div class="privacidade-indice-header">
+                        <i class="fas fa-list-ul"></i>
+                        <span>Navegação rápida</span>
+                    </div>
+                    <div class="privacidade-indice-grid">
+                        <a href="#sec1">1. Informações que Coletamos</a>
+                        <a href="#sec2">2. Como Usamos as Informações</a>
+                        <a href="#sec3">3. Cookies e Tecnologias</a>
+                        <a href="#sec4">4. Compartilhamento de Dados</a>
+                        <a href="#sec5">5. Segurança dos Dados</a>
+                        <a href="#sec6">6. Seus Direitos</a>
+                        <a href="#sec7">7. Retenção de Dados</a>
+                        <a href="#sec8">8. Links para Terceiros</a>
+                        <a href="#sec9">9. Alterações à Política</a>
+                        <a href="#sec10">10. Contacto</a>
+                    </div>
+                </div>
+
+                <!-- ===== CONTEÚDO ===== -->
+                <div class="privacidade-content">
+                    
+                    <!-- Secção 1 -->
+                    <div id="sec1" class="privacidade-secao">
+                        <div class="privacidade-secao-header">
+                            <span class="privacidade-secao-number">01</span>
+                            <h2>Informações que Coletamos</h2>
+                        </div>
+                        <div class="privacidade-secao-body">
+                            <p>O <strong>Descubra Angola</strong> pode coletar os seguintes tipos de informações:</p>
+                            <ul class="privacidade-lista">
+                                <li><i class="fas fa-user"></i> <strong>Informações Pessoais:</strong> Nome, endereço de email, telefone e dados de perfil fornecidos voluntariamente.</li>
+                                <li><i class="fas fa-chart-line"></i> <strong>Dados de Uso:</strong> Páginas visitadas, tempo de navegação, cliques e interações com o site.</li>
+                                <li><i class="fas fa-map-marker-alt"></i> <strong>Dados de Localização:</strong> Aproximada, baseada no endereço IP ou consentimento do utilizador.</li>
+                                <li><i class="fas fa-cookie"></i> <strong>Cookies:</strong> Pequenos arquivos que armazenam preferências e melhoram a experiência.</li>
+                            </ul>
+                            <div class="privacidade-destaque">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Coletamos apenas as informações necessárias para melhorar a sua experiência no site.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secção 2 -->
+                    <div id="sec2" class="privacidade-secao">
+                        <div class="privacidade-secao-header">
+                            <span class="privacidade-secao-number">02</span>
+                            <h2>Como Usamos as Informações</h2>
+                        </div>
+                        <div class="privacidade-secao-body">
+                            <p>As informações coletadas são utilizadas para:</p>
+                            <ul class="privacidade-lista">
+                                <li><i class="fas fa-check-circle"></i> Fornecer e manter os serviços do site.</li>
+                                <li><i class="fas fa-check-circle"></i> Personalizar a experiência do utilizador.</li>
+                                <li><i class="fas fa-check-circle"></i> Enviar comunicações, como newsletters e ofertas exclusivas (com consentimento).</li>
+                                <li><i class="fas fa-check-circle"></i> Analisar e melhorar o desempenho do site.</li>
+                                <li><i class="fas fa-check-circle"></i> Cumprir obrigações legais e regulatórias.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Secção 3 -->
+                    <div id="sec3" class="privacidade-secao">
+                        <div class="privacidade-secao-header">
+                            <span class="privacidade-secao-number">03</span>
+                            <h2>Cookies e Tecnologias</h2>
+                        </div>
+                        <div class="privacidade-secao-body">
+                            <p>O <strong>Descubra Angola</strong> utiliza cookies para melhorar a sua experiência. Os cookies são pequenos arquivos armazenados no seu dispositivo que ajudam a:</p>
+                            <ul class="privacidade-lista">
+                                <li><i class="fas fa-cookie-bite"></i> Lembrar as suas preferências de navegação.</li>
+                                <li><i class="fas fa-cookie-bite"></i> Analisar o tráfego e o comportamento dos utilizadores.</li>
+                                <li><i class="fas fa-cookie-bite"></i> Personalizar conteúdo e anúncios.</li>
+                            </ul>
+                            <p>Pode desativar os cookies nas configurações do seu navegador, mas isso pode afetar a funcionalidade do site.</p>
+                            <div class="privacidade-alerta">
+                                <i class="fas fa-cookie"></i>
+                                <div>
+                                    <strong>Gestão de Cookies:</strong>
+                                    <p>Você pode gerenciar ou desativar os cookies a qualquer momento nas configurações do seu navegador.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secção 4 -->
+                    <div id="sec4" class="privacidade-secao">
+                        <div class="privacidade-secao-header">
+                            <span class="privacidade-secao-number">04</span>
+                            <h2>Compartilhamento de Dados</h2>
+                        </div>
+                        <div class="privacidade-secao-body">
+                            <p>O <strong>Descubra Angola</strong> <strong>não vende, aluga ou compartilha</strong> as suas informações pessoais com terceiros, exceto:</p>
+                            <ul class="privacidade-lista">
+                                <li><i class="fas fa-shield-alt"></i> Quando necessário para cumprir obrigações legais.</li>
+                                <li><i class="fas fa-shield-alt"></i> Com prestadores de serviços que auxiliam na operação do site (ex: hospedagem, envio de emails).</li>
+                                <li><i class="fas fa-shield-alt"></i> Com o seu consentimento explícito.</li>
+                            </ul>
+                            <p>Todos os prestadores de serviços são obrigados a manter a confidencialidade dos seus dados.</p>
+                        </div>
+                    </div>
+
+                    <!-- Secção 5 -->
+                    <div id="sec5" class="privacidade-secao">
+                        <div class="privacidade-secao-header">
+                            <span class="privacidade-secao-number">05</span>
+                            <h2>Segurança dos Dados</h2>
+                        </div>
+                        <div class="privacidade-secao-body">
+                            <p>Implementamos medidas de segurança para proteger as suas informações contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+                            <ul class="privacidade-lista">
+                                <li><i class="fas fa-lock"></i> Utilizamos <strong>criptografia SSL</strong> para proteger a transmissão de dados.</li>
+                                <li><i class="fas fa-lock"></i> Armazenamos dados em servidores seguros com firewalls.</li>
+                                <li><i class="fas fa-lock"></i> Apenas funcionários autorizados têm acesso às informações.</li>
+                            </ul>
+                            <div class="privacidade-alerta privacidade-alerta-verde">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <strong>Segurança em Primeiro Lugar:</strong>
+                                    <p>Estamos comprometidos em proteger a sua privacidade com as melhores práticas de segurança.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secção 6 -->
+                    <div id="sec6" class="privacidade-secao">
+                        <div class="privacidade-secao-header">
+                            <span class="privacidade-secao-number">06</span>
+                            <h2>Seus Direitos</h2>
+                        </div>
+                        <div class="privacidade-secao-body">
+                            <p>De acordo com as leis aplicáveis, você tem os seguintes direitos sobre os seus dados:</p>
+                            <ul class="privacidade-lista">
+                                <li><i class="fas fa-eye"></i> <strong>Acesso:</strong> Solicitar uma cópia dos seus dados pessoais.</li>
+                                <li><i class="fas fa-edit"></i> <strong>Retificação:</strong> Corrigir dados imprecisos ou incompletos.</li>
+                                <li><i class="fas fa-trash-alt"></i> <strong>Eliminação:</strong> Solicitar a remoção dos seus dados.</li>
+                                <li><i class="fas fa-ban"></i> <strong>Oposição:</strong> Opor-se ao processamento de dados para fins específicos.</li>
+                                <li><i class="fas fa-download"></i> <strong>Portabilidade:</strong> Receber os seus dados em formato estruturado.</li>
+                            </ul>
+                            <p>Para exercer qualquer um destes direitos, entre em contacto connosco.</p>
+                        </div>
+                    </div>
+
+                    <!-- Secção 7 -->
+                    <div id="sec7" class="privacidade-secao">
+                        <div class="privacidade-secao-header">
+                            <span class="privacidade-secao-number">07</span>
+                            <h2>Retenção de Dados</h2>
+                        </div>
+                        <div class="privacidade-secao-body">
+                            <p>Manteremos os seus dados pessoais apenas pelo tempo necessário para cumprir as finalidades descritas nesta Política de Privacidade, a menos que um período de retenção mais longo seja exigido ou permitido por lei.</p>
+                            <p>Quando os dados não forem mais necessários, serão eliminados de forma segura.</p>
+                        </div>
+                    </div>
+
+                    <!-- Secção 8 -->
+                    <div id="sec8" class="privacidade-secao">
+                        <div class="privacidade-secao-header">
+                            <span class="privacidade-secao-number">08</span>
+                            <h2>Links para Terceiros</h2>
+                        </div>
+                        <div class="privacidade-secao-body">
+                            <p>O <strong>Descubra Angola</strong> pode conter links para sites de terceiros. Esta Política de Privacidade <strong>não se aplica</strong> a esses sites. Recomendamos que leia as políticas de privacidade de cada site que visitar.</p>
+                            <p>Não nos responsabilizamos pelas práticas de privacidade de terceiros.</p>
+                        </div>
+                    </div>
+
+                    <!-- Secção 9 -->
+                    <div id="sec9" class="privacidade-secao">
+                        <div class="privacidade-secao-header">
+                            <span class="privacidade-secao-number">09</span>
+                            <h2>Alterações à Política</h2>
+                        </div>
+                        <div class="privacidade-secao-body">
+                            <p>Podemos atualizar esta Política de Privacidade periodicamente. As alterações entram em vigor a partir da data de publicação no site.</p>
+                            <p>Recomendamos que reveja esta página regularmente para se manter informado sobre como protegemos as suas informações.</p>
+                        </div>
+                    </div>
+
+                    <!-- Secção 10 -->
+                    <div id="sec10" class="privacidade-secao">
+                        <div class="privacidade-secao-header">
+                            <span class="privacidade-secao-number">10</span>
+                            <h2>Contacto</h2>
+                        </div>
+                        <div class="privacidade-secao-body">
+                            <p>Se tiver dúvidas sobre esta Política de Privacidade ou sobre os seus dados pessoais, entre em contacto connosco:</p>
+                            <div class="privacidade-contacto">
+                                <a href="mailto:info@descubraangola.com">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@descubraangola.com</span>
+                                </a>
+                                <a href="tel:+244923456789">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+244 923 456 789</span>
+                                </a>
+                                <a href="#">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Luanda, Angola</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ===== BOTÃO VOLTAR ===== -->
+                <div class="privacidade-voltar">
+                    <a href="javascript:history.back()" class="btn-voltar">
+                        <i class="fas fa-arrow-left"></i> Voltar
+                    </a>
+                    <a href="index.html" class="btn-voltar btn-voltar-primary">
+                        <i class="fas fa-home"></i> Página Inicial
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.desc">
+                        Curadoria de experiências únicas nos destinos mais impressionantes de Angola. 
+                        Sua próxima aventura merece esse cuidado.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.navegacao">NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="sobre.html" data-i18n="nav.sobre">Sobre</a></li>
+                        <li><a href="destinos.html" data-i18n="nav.destinos">Destinos</a></li>
+                        <li><a href="regioes.html" data-i18n="nav.passeios">Passeios</a></li>
+                        <li><a href="cultura.html" data-i18n="nav.safaris">Safaris</a></li>
+                        <li><a href="recomendamos.html" data-i18n="nav.recomendamos">Recomendamos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.suporte">SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html" data-i18n="footer.contacto">Contacto</a></li>
+                        <li><a href="depoimentos.html">Depoimentos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">Página 404</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html" data-i18n="footer.privacidade">Política de Privacidade</a></li>
+                        <li><a href="termos.html" data-i18n="footer.termos">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

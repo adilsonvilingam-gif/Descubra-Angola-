@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/galeria.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">🌍 Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">🏙️ Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">🏔️ Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">🌳 Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">⭐ Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">🏛️ Passeios Culturais</a></li>
+                            <li><a href="regioes.html">🌿 Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">📜 Passeios Históricos</a></li>
+                            <li><a href="regioes.html">🧗 Passeios Aventura</a></li>
+                            <li><a href="regioes.html">🎯 Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">🦁 Safari na Kissama</a></li>
+                            <li><a href="cultura.html">🐘 Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">📸 Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">🔭 Safari de Observação</a></li>
+                            <li><a href="cultura.html">👨‍👩‍👧‍👦 Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">🏨 Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">🍽️ Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">🧭 Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">🚗 Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">💡 Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="destinos.html" class="btn-nav">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO DA GALERIA ===== -->
+    <section class="galeria-hero">
+        <div class="galeria-hero-overlay"></div>
+        <div class="container">
+            <div class="galeria-hero-content">
+                <span class="galeria-hero-badge">📸 GALERIA</span>
+                <h1>Memórias de Angola</h1>
+                <p>Imagens que capturam a essência, a beleza e a alma de Angola.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIAS ===== -->
+    <section class="galeria-categorias">
+        <div class="container">
+            <div class="galeria-categorias-wrapper">
+                <button class="galeria-cat active" data-cat="todos">Todas</button>
+                <button class="galeria-cat" data-cat="paisagens">🏔️ Paisagens</button>
+                <button class="galeria-cat" data-cat="cultura">🎭 Cultura</button>
+                <button class="galeria-cat" data-cat="safari">🦁 Safari</button>
+                <button class="galeria-cat" data-cat="praias">🏖️ Praias</button>
+                <button class="galeria-cat" data-cat="cidades">🏙️ Cidades</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GRADE DE FOTOS ===== -->
+    <section class="galeria-grade">
+        <div class="container">
+            <div class="galeria-grid" id="galeriaGrid">
+                <!-- Foto 1 -->
+                <div class="galeria-item" data-cat="paisagens">
+                    <img src="../media/serra-leba.webp" alt="Serra da Leba">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Serra da Leba</h4>
+                            <p>Huíla, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="galeria-item" data-cat="paisagens">
+                    <img src="../media/MiradouroDaLua.jpg" alt="Miradouro da Lua">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Miradouro da Lua</h4>
+                            <p>Luanda, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="galeria-item" data-cat="paisagens">
+                    <img src="../media/kalandula.jpg" alt="Quedas do Kalandula">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Quedas do Kalandula</h4>
+                            <p>Malanje, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="galeria-item" data-cat="paisagens">
+                    <img src="../media/Tundavala.jpg" alt="Fenda da Tundavala">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Fenda da Tundavala</h4>
+                            <p>Huíla, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="galeria-item" data-cat="praias">
+                    <img src="../media/IlhaDoMussulo.jpg" alt="Ilha do Mussulo">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Ilha do Mussulo</h4>
+                            <p>Luanda, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="galeria-item" data-cat="safari">
+                    <img src="../media/kissama.png" alt="Parque da Kissama">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Parque da Kissama</h4>
+                            <p>Bengo, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 7 -->
+                <div class="galeria-item" data-cat="paisagens">
+                    <img src="../media/Floresta-do-Maiombe.png" alt="Floresta do Maiombe">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Floresta do Maiombe</h4>
+                            <p>Cabinda, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 8 -->
+                <div class="galeria-item" data-cat="safari">
+                    <img src="../media/palanca-negra.png" alt="Palanca Negra">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Palanca Negra</h4>
+                            <p>Malanje, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 9 -->
+                <div class="galeria-item" data-cat="paisagens">
+                    <img src="../media/deserto.jpg" alt="Deserto do Namibe">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Deserto do Namibe</h4>
+                            <p>Namibe, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 10 -->
+                <div class="galeria-item" data-cat="cultura">
+                    <img src="../media/mbanza-kongo.jpg" alt="Mbanza Kongo">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Mbanza Kongo</h4>
+                            <p>Zaire, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 11 -->
+                <div class="galeria-item" data-cat="cidades">
+                    <img src="../media/benguela.jpg" alt="Benguela">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Benguela</h4>
+                            <p>Benguela, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 12 -->
+                <div class="galeria-item" data-cat="praias">
+                    <img src="../media/bahia-farta.jpg" alt="Baía Farta">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Baía Farta</h4>
+                            <p>Benguela, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 13 -->
+                <div class="galeria-item" data-cat="cultura">
+                    <img src="../media/museuantropologia.jpg" alt="Museu Nacional de Antropologia">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Museu Nacional de Antropologia</h4>
+                            <p>Luanda, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 14 -->
+                <div class="galeria-item" data-cat="safari">
+                    <img src="../media/iona.jpg" alt="Parque Nacional do Iona">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Parque Nacional do Iona</h4>
+                            <p>Cunene, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 15 -->
+                <div class="galeria-item" data-cat="paisagens">
+                    <img src="../media/arcodesertojpg.jpg" alt="Arco do Namibe">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Arco do Namibe</h4>
+                            <p>Namibe, Angola</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 16 -->
+                <div class="galeria-item" data-cat="cidades">
+                    <img src="../media/lobito.jpg" alt="Lobito">
+                    <div class="galeria-overlay">
+                        <div class="galeria-info">
+                            <h4>Lobito</h4>
+                            <p>Benguela, Angola</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carregar mais -->
+            <div class="galeria-load-more">
+                <button class="btn-load-more-galeria" id="loadMoreGaleria">
+                    <i class="fas fa-sync-alt"></i> Carregar mais fotos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="galeria-newsletter">
+        <div class="container">
+            <div class="galeria-newsletter-wrapper">
+                <div class="galeria-newsletter-content">
+                    <h2>📬 Receba novidades</h2>
+                    <p>Inscreva-se para receber as melhores fotos e dicas de viagem.</p>
+                </div>
+                <form class="galeria-newsletter-form">
+                    <input type="email" placeholder="Seu email" required>
+                    <button type="submit">Inscrever</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description">
+                        Curadoria de experiências únicas nos destinos mais impressionantes de Angola. 
+                        Sua próxima aventura merece esse cuidado.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="regioes.html">Passeios</a></li>
+                        <li><a href="cultura.html">Safaris</a></li>
+                        <li><a href="recomendamos.html">Recomendamos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos.html">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== NOTIFICAÇÕES ===== -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+    <script src="../js/galeria.js"></script>
+
+</body>
+</html>

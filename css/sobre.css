@@ -1,0 +1,499 @@
+/* =============================================
+   SOBRE.CSS - Página Sobre Nós
+   ============================================= */
+
+/* ===== HERO ===== */
+.sobre-hero {
+    position: relative;
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, #0F172A 0%, #1a2744 50%, #2a3a5a 100%);
+    text-align: center;
+    overflow: hidden;
+}
+
+.sobre-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,183,3,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.sobre-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.4) 100%);
+}
+
+.sobre-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.sobre-hero-badge {
+    display: inline-block;
+    background: rgba(255,183,3,0.15);
+    color: #FFB703;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.sobre-hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+
+.sobre-hero-content p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* =============================================
+   CONTEÚDO
+   ============================================= */
+
+.sobre-content {
+    padding: 60px 0 80px;
+    background: #f8f9fa;
+}
+
+/* ===== INTRO ===== */
+.sobre-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.sobre-intro-text h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 16px;
+}
+
+.sobre-intro-text p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+.sobre-intro-text p strong {
+    color: #0F172A;
+}
+
+.sobre-missao {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.missao-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.missao-item i {
+    color: #FFB703;
+    font-size: 1.3rem;
+    margin-top: 2px;
+    width: 28px;
+}
+
+.missao-item h4 {
+    font-weight: 700;
+    color: #0F172A;
+    font-size: 0.95rem;
+}
+
+.missao-item p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.sobre-intro-image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+.sobre-intro-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.sobre-intro-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+}
+
+.sobre-intro-image-overlay span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.sobre-intro-image-overlay p {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    letter-spacing: 2px;
+}
+
+/* ===== NÚMEROS ===== */
+.sobre-numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+}
+
+.sobre-number-item {
+    text-align: center;
+}
+
+.sobre-number-item .number {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #FFB703;
+    line-height: 1;
+}
+
+.sobre-number-item .label {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+/* ===== POR QUE ESCOLHER ===== */
+.sobre-porque {
+    margin-bottom: 60px;
+}
+
+.sobre-porque h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0F172A;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.sobre-porque-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.porque-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+
+.porque-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.porque-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255,183,3,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    font-size: 1.5rem;
+    color: #FFB703;
+}
+
+.porque-item h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 6px;
+}
+
+.porque-item p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ===== EQUIPA ===== */
+.sobre-equipa h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0F172A;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.sobre-equipa-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.equipa-item {
+    text-align: center;
+    padding: 24px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+
+.equipa-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.equipa-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFB703, #E85D04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    font-size: 2.5rem;
+}
+
+.equipa-item h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 2px;
+}
+
+.equipa-item p {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* =============================================
+   DARK MODE
+   ============================================= */
+
+body.dark-mode .sobre-hero {
+    background: linear-gradient(135deg, #0a0f1a 0%, #0F172A 50%, #1a2744 100%);
+}
+
+body.dark-mode .sobre-content {
+    background: #0F172A;
+}
+
+body.dark-mode .sobre-intro-text h2 {
+    color: white;
+}
+
+body.dark-mode .sobre-intro-text p {
+    color: #aaa;
+}
+
+body.dark-mode .sobre-intro-text p strong {
+    color: white;
+}
+
+body.dark-mode .missao-item h4 {
+    color: white;
+}
+
+body.dark-mode .missao-item p {
+    color: #aaa;
+}
+
+body.dark-mode .sobre-numbers {
+    background: #1a2744;
+}
+
+body.dark-mode .sobre-number-item .label {
+    color: #aaa;
+}
+
+body.dark-mode .sobre-porque h2 {
+    color: white;
+}
+
+body.dark-mode .porque-item {
+    background: #1a2744;
+}
+
+body.dark-mode .porque-item h4 {
+    color: white;
+}
+
+body.dark-mode .porque-item p {
+    color: #aaa;
+}
+
+body.dark-mode .porque-icon {
+    background: rgba(255,183,3,0.1);
+}
+
+body.dark-mode .sobre-equipa h2 {
+    color: white;
+}
+
+body.dark-mode .equipa-item {
+    background: #1a2744;
+}
+
+body.dark-mode .equipa-item h4 {
+    color: white;
+}
+
+body.dark-mode .equipa-item p {
+    color: #888;
+}
+
+/* =============================================
+   RESPONSIVO
+   ============================================= */
+
+@media (max-width: 992px) {
+    .sobre-intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sobre-intro-image img {
+        height: 280px;
+    }
+
+    .sobre-numbers {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .sobre-porque-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sobre-equipa-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sobre-hero {
+        padding: 130px 0 50px;
+    }
+
+    .sobre-hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .sobre-hero-content p {
+        font-size: 1rem;
+    }
+
+    .sobre-intro-text h2 {
+        font-size: 2rem;
+    }
+
+    .sobre-numbers {
+        grid-template-columns: 1fr 1fr;
+        padding: 24px;
+        gap: 16px;
+    }
+
+    .sobre-number-item .number {
+        font-size: 2.2rem;
+    }
+
+    .sobre-porque h2 {
+        font-size: 1.8rem;
+    }
+
+    .sobre-porque-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .sobre-equipa h2 {
+        font-size: 1.8rem;
+    }
+
+    .sobre-equipa-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .equipa-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sobre-hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .sobre-intro-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .sobre-intro-image img {
+        height: 220px;
+    }
+
+    .sobre-numbers {
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+    }
+
+    .sobre-number-item .number {
+        font-size: 1.8rem;
+    }
+
+    .sobre-porque-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-equipa-grid {
+        grid-template-columns: 1fr;
+    }
+}

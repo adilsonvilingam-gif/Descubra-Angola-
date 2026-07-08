@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página não encontrada | Descubra Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/404.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#FFB703">
+</head>
+<body>
+
+    <!-- ===== BARRA DE PROGRESSO ===== -->
+    <div id="progressBar"></div>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration:none;color:white;">
+                        <span>Descubra</span> Angola
+                        <small>THE RHYTHM OF LIFE</small>
+                    </a>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="destinos.html">Destinos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="destinos.html">Todos os Destinos</a></li>
+                            <li><a href="destinos.html?regiao=norte">🌍 Norte de Angola</a></li>
+                            <li><a href="destinos.html?regiao=centro">🏙️ Centro de Angola</a></li>
+                            <li><a href="destinos.html?regiao=sul">🏔️ Sul de Angola</a></li>
+                            <li><a href="destinos.html?regiao=leste">🌳 Leste de Angola</a></li>
+                            <li><a href="destinos.html?destaque=true">⭐ Destinos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="regioes.html">Passeios <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regioes.html">Todos os Passeios</a></li>
+                            <li><a href="regioes.html">🏛️ Passeios Culturais</a></li>
+                            <li><a href="regioes.html">🌿 Passeios pela Natureza</a></li>
+                            <li><a href="regioes.html">📜 Passeios Históricos</a></li>
+                            <li><a href="regioes.html">🧗 Passeios Aventura</a></li>
+                            <li><a href="regioes.html">🎯 Roteiros Personalizados</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="cultura.html">Safaris <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cultura.html">Todos os Safaris</a></li>
+                            <li><a href="cultura.html">🦁 Safari na Kissama</a></li>
+                            <li><a href="cultura.html">🐘 Safari no Mucusso</a></li>
+                            <li><a href="cultura.html">📸 Safari Fotográfico</a></li>
+                            <li><a href="cultura.html">🔭 Safari de Observação</a></li>
+                            <li><a href="cultura.html">👨‍👩‍👧‍👦 Safari em Família</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="recomendamos.html">Recomendamos <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="recomendamos.html">Todas as Recomendações</a></li>
+                            <li><a href="recomendamos.html">🏨 Melhores Hotéis</a></li>
+                            <li><a href="recomendamos.html">🍽️ Restaurantes Típicos</a></li>
+                            <li><a href="recomendamos.html">🧭 Guias Turísticos</a></li>
+                            <li><a href="recomendamos.html">🚗 Transporte e Aluguer</a></li>
+                            <li><a href="recomendamos.html">💡 Dicas de Viagem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="auth-link" aria-label="Login">👤</a>
+                    
+                    <div id="userInfo" class="user-info" style="display:none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="logout-btn">Sair</button>
+                    </div>
+                    
+                    <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar tema">🌙</button>
+                    
+                    <a href="destinos.html" class="btn-nav">Planeje Agora</a>
+                    
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== PÁGINA 404 ===== -->
+    <section class="error-404">
+        <div class="container">
+            <div class="error-404-content">
+                <div class="error-404-icon">
+                    <span>🌍</span>
+                </div>
+                <div class="error-404-number">
+                    <span>4</span>
+                    <span class="error-404-zero">0</span>
+                    <span>4</span>
+                </div>
+                <h1>Página não encontrada</h1>
+                <p>Parece que você se perdeu no caminho. A página que procura não existe ou foi movida.</p>
+                <div class="error-404-buttons">
+                    <a href="index.html" class="btn-error-home">
+                        <i class="fas fa-home"></i> Voltar para o Início
+                    </a>
+                    <a href="destinos.html" class="btn-error-destinos">
+                        <i class="fas fa-compass"></i> Explorar Destinos
+                    </a>
+                </div>
+                <div class="error-404-suggestions">
+                    <p>Ou pode tentar uma destas páginas:</p>
+                    <div class="error-404-links">
+                        <a href="destinos.html">Destinos</a>
+                        <a href="regioes.html">Passeios</a>
+                        <a href="cultura.html">Safaris</a>
+                        <a href="recomendamos.html">Recomendações</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="contacto.html">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <h3><span>Descubra</span> Angola</h3>
+                        <p>THE RHYTHM OF LIFE</p>
+                    </div>
+                    <p class="footer-description">
+                        Curadoria de experiências únicas nos destinos mais impressionantes de Angola. 
+                        Sua próxima aventura merece esse cuidado.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>NAVEGAÇÃO</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="regioes.html">Passeios</a></li>
+                        <li><a href="cultura.html">Safaris</a></li>
+                        <li><a href="recomendamos.html">Recomendamos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>SUPORTE</h4>
+                    <ul>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="mapa-site.html">Mapa do Site</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos.html">Termos de Condições</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Descubra Angola. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

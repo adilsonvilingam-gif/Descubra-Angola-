@@ -1,0 +1,267 @@
+/* =============================================
+   404.CSS - Página de Erro 404
+   ============================================= */
+
+.error-404 {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 0 80px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8e8e8 100%);
+    text-align: center;
+}
+
+.error-404-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-404-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.error-404-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 8rem;
+    font-weight: 900;
+    color: #0F172A;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.error-404-zero {
+    color: #FFB703;
+    position: relative;
+}
+
+.error-404-zero::before {
+    content: '•';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    color: rgba(255,183,3,0.2);
+}
+
+.error-404-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 15px;
+}
+
+.error-404-content p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.error-404-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.btn-error-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #FFB703, #E85D04);
+    color: #0F172A;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255,183,3,0.3);
+}
+
+.btn-error-home:hover {
+    background: linear-gradient(135deg, #E85D04, #c44a00);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(232,93,4,0.4);
+}
+
+.btn-error-destinos {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: transparent;
+    color: #0F172A;
+    border: 2px solid #0F172A;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-error-destinos:hover {
+    background: #0F172A;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(15,23,42,0.15);
+}
+
+.error-404-suggestions p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.error-404-links {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.error-404-links a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 50px;
+    background: rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+
+.error-404-links a:hover {
+    background: rgba(255,183,3,0.1);
+    color: #E85D04;
+}
+
+/* =============================================
+   DARK MODE
+   ============================================= */
+
+body.dark-mode .error-404 {
+    background: linear-gradient(135deg, #0F172A 0%, #1a2744 100%);
+}
+
+body.dark-mode .error-404-number {
+    color: white;
+}
+
+body.dark-mode .error-404-zero {
+    color: #FFB703;
+}
+
+body.dark-mode .error-404-content h1 {
+    color: white;
+}
+
+body.dark-mode .error-404-content p {
+    color: #aaa;
+}
+
+body.dark-mode .btn-error-home {
+    background: linear-gradient(135deg, #FFB703, #E85D04);
+    color: #0F172A;
+}
+
+body.dark-mode .btn-error-home:hover {
+    background: linear-gradient(135deg, #E85D04, #c44a00);
+    color: white;
+}
+
+body.dark-mode .btn-error-destinos {
+    border-color: #FFB703;
+    color: #FFB703;
+}
+
+body.dark-mode .btn-error-destinos:hover {
+    background: #FFB703;
+    color: #0F172A;
+}
+
+body.dark-mode .error-404-suggestions p {
+    color: #666;
+}
+
+body.dark-mode .error-404-links a {
+    color: #888;
+    background: rgba(255,255,255,0.05);
+}
+
+body.dark-mode .error-404-links a:hover {
+    background: rgba(255,183,3,0.1);
+    color: #FFB703;
+}
+
+/* =============================================
+   RESPONSIVO
+   ============================================= */
+
+@media (max-width: 768px) {
+    .error-404 {
+        padding: 120px 0 60px;
+        min-height: calc(100vh - 140px);
+    }
+
+    .error-404-number {
+        font-size: 5rem;
+        gap: 6px;
+    }
+
+    .error-404-zero::before {
+        font-size: 4rem;
+    }
+
+    .error-404-content h1 {
+        font-size: 2rem;
+    }
+
+    .error-404-content p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .error-404-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-error-home,
+    .btn-error-destinos {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+
+    .error-404-links {
+        gap: 8px;
+    }
+
+    .error-404-links a {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-404-number {
+        font-size: 4rem;
+    }
+
+    .error-404-icon {
+        font-size: 4rem;
+    }
+
+    .error-404-content h1 {
+        font-size: 1.6rem;
+    }
+}
